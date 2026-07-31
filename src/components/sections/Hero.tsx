@@ -68,13 +68,6 @@ export function Hero() {
             animate="visible"
             className="w-full max-w-[min(100%,28rem)] sm:max-w-[min(100%,32rem)] md:max-w-[42%]"
           >
-            <motion.p
-              variants={heroFade}
-              className="mb-7 font-mono text-[0.65rem] tracking-[0.16em] uppercase text-white/65 md:mb-8"
-            >
-              Zenizz · Istanbul
-            </motion.p>
-
             <motion.h1
               variants={heroFade}
               className="display text-[clamp(2.15rem,5.5vw,4.25rem)] !leading-[1.08] !tracking-[-0.035em]"
