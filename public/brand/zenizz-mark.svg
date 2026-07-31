@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
+  <!-- Three parallel diagonal strokes — sharp geometric Z monogram -->
+  <path d="M10 14h36L28 106H-8z"/>
+  <path d="M46 14h36L64 106H28z"/>
+  <path d="M82 14h36L100 106H64z"/>
+</svg>
