@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Bekijk de ZENIZZ gallery — interieur, cuts, details en sfeer van ons Amsterdam barbershop atelier.",
+  alternates: {
+    canonical: "/gallery",
+  },
 };
 
 export default function GalleryPage() {

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Team",
   description:
     "Ontmoet het ZENIZZ team — master barbers en specialisten in fades, scissor work, texture en classic rituals.",
+  alternates: {
+    canonical: "/team",
+  },
 };
 
 export default function TeamPage() {

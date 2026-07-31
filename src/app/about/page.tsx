@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Ontdek het verhaal achter ZENIZZ — een modern barbershop atelier in Amsterdam, gebouwd rond craft, presence en precisie.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const pillars = [

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Bezoek ZENIZZ aan de Prinsengracht in Amsterdam of boek een afspraak. Bekijk openingstijden en contactgegevens.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

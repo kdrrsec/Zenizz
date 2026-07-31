@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Bekijk alle ZENIZZ services: signature cuts, fades, beard sculpting, hot towel shaves en complete grooming rituals.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {
