@@ -14,8 +14,8 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "28%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.35]);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "22%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.4]);
 
   return (
     <section
@@ -26,61 +26,56 @@ export function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={images.hero}
-          alt="Barber giving a precise haircut in the ZENIZZ atelier"
+          alt="Barber giving a precise cut in the ZENIZZ atelier"
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/20" />
-        <div className="absolute inset-0 bg-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/25" />
       </motion.div>
 
-      <motion.div
-        style={{ opacity }}
-        className="relative z-10 w-full pb-16 pt-32 md:pb-24"
-      >
+      <motion.div style={{ opacity }} className="relative z-10 w-full pb-14 pt-40 md:pb-20">
         <div className="container-wide">
           <motion.div
             variants={staggerContainer}
             initial={reduce ? false : "hidden"}
             animate="visible"
-            className="max-w-4xl"
+            className="max-w-5xl"
           >
-            <motion.p variants={fadeUp} className="eyebrow mb-6 text-warm">
-              Amsterdam Barber Atelier
+            <motion.p variants={fadeUp} className="mb-6 font-mono text-[0.7rem] tracking-[0.12em] uppercase text-white/70">
+              {siteConfig.name} Barber Atelier
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="display text-[clamp(3.4rem,12vw,8.5rem)] text-balance"
+              className="display text-[clamp(3.2rem,11vw,8rem)]"
             >
-              {siteConfig.name}
+              Sit with us.
+              <br />
+              We know hair.
             </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-paper/85"
-            >
-              Waar craft, presence en precisie samenkomen. Een rustige stoel,
-              scherpe lijnen, en de tijd om het goed te doen.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-              <Button href="#book" variant="inverse">
-                Book Appointment
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+              <Button href="/services" variant="inverse">
+                Services
               </Button>
-              <Button href="/services" variant="secondary" className="border-paper/30 text-paper hover:bg-paper hover:text-ink">
-                View Services
+              <Button href="#book" variant="soft">
+                Book Appointment
               </Button>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="mt-16 flex items-end justify-between gap-6 border-t border-white/15 pt-6"
+            className="mt-16 flex items-end justify-between gap-6 border-t border-white/15 pt-5"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8, ease: easeOutExpo }}
+            transition={{ delay: 0.9, duration: 0.7, ease: easeOutExpo }}
           >
-            <p className="eyebrow text-warm/80">{siteConfig.tagline}</p>
-            <p className="hidden eyebrow text-warm/80 sm:block">Scroll</p>
+            <p className="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-white/65">
+              We take this craft very seriously
+            </p>
+            <p className="hidden font-mono text-[0.65rem] tracking-[0.12em] uppercase text-white/65 sm:block">
+              Scroll
+            </p>
           </motion.div>
         </div>
       </motion.div>

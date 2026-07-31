@@ -17,7 +17,7 @@ export function Navbar() {
   const isHome = pathname === "/";
 
   useMotionValueEvent(scrollY, "change", (value) => {
-    setScrolled(value > 24);
+    setScrolled(value > 16);
   });
 
   useEffect(() => {
@@ -35,24 +35,67 @@ export function Navbar() {
 
   return (
     <>
+      <div className="fixed inset-x-0 top-0 z-[60] border-b border-black/5 bg-paper text-ink">
+        <div className="marquee py-2">
+          <div className="marquee-track eyebrow !text-ink/70">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i} className="inline-flex items-center gap-8 px-4">
+                <span>We take this craft very seriously</span>
+                <span aria-hidden>·</span>
+                <span>Amsterdam atelier</span>
+                <span aria-hidden>·</span>
+                <span>Book your chair</span>
+                <span aria-hidden>·</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,border-color,color] duration-500",
+          "fixed inset-x-0 top-[var(--announce-height)] z-50 transition-[background,border-color,color,backdrop-filter] duration-400",
           solid
-            ? "border-b border-line/80 bg-paper/90 text-ink backdrop-blur-md"
+            ? "border-b border-line bg-paper/95 text-ink backdrop-blur-md"
             : "border-b border-transparent bg-transparent text-paper",
         )}
       >
-        <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-6">
+        <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-4">
+          <button
+            type="button"
+            className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Sluit menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <div className="flex w-5 flex-col gap-1.5">
+              <span
+                className={cn(
+                  "block h-px w-full transition-transform duration-300",
+                  solid || open ? "bg-ink" : "bg-paper",
+                  open && "translate-y-[3.5px] rotate-45",
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-px w-full transition-transform duration-300",
+                  solid || open ? "bg-ink" : "bg-paper",
+                  open && "-translate-y-[3.5px] -rotate-45",
+                )}
+              />
+            </div>
+          </button>
+
           <Link
             href="/"
-            className="display text-2xl tracking-tight transition-opacity hover:opacity-70"
+            className="font-mono text-sm font-semibold tracking-[0.14em] uppercase transition-opacity hover:opacity-60"
             aria-label={`${siteConfig.name} home`}
           >
             {siteConfig.name}
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Hoofdnavigatie">
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">
             {navigation.map((item) => {
               const active = pathname === item.href;
               return (
@@ -60,9 +103,9 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "eyebrow transition-colors duration-300",
-                    solid ? "hover:text-ink" : "text-paper/75 hover:text-paper",
-                    active && (solid ? "text-ink" : "text-paper"),
+                    "font-mono text-[0.7rem] tracking-[0.08em] uppercase transition-opacity hover:opacity-55",
+                    solid ? "text-ink" : "text-paper/85",
+                    active && "opacity-100 underline underline-offset-4",
                   )}
                 >
                   {item.label}
@@ -71,43 +114,16 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden sm:block">
             <Button
               href="#book"
-              variant={solid ? "primary" : "inverse"}
+              variant={solid ? "soft" : "inverse"}
               size="sm"
               ariaLabel="Book appointment"
             >
               Book Appointment
             </Button>
           </div>
-
-          <button
-            type="button"
-            className="relative z-50 flex h-11 w-11 items-center justify-center lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Sluit menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="sr-only">Menu</span>
-            <div className="flex w-6 flex-col gap-1.5">
-              <span
-                className={cn(
-                  "block h-px w-full origin-center transition-transform duration-300",
-                  solid || open ? "bg-ink" : "bg-paper",
-                  open && "translate-y-[3.5px] rotate-45",
-                )}
-              />
-              <span
-                className={cn(
-                  "block h-px w-full origin-center transition-transform duration-300",
-                  solid || open ? "bg-ink" : "bg-paper",
-                  open && "-translate-y-[3.5px] -rotate-45",
-                )}
-              />
-            </div>
-          </button>
         </div>
       </header>
 
@@ -115,24 +131,24 @@ export function Navbar() {
         {open ? (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-40 bg-paper pt-[var(--nav-height)] lg:hidden"
+            className="fixed inset-0 z-40 bg-paper pt-[calc(var(--announce-height)+var(--nav-height))] lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: easeOutExpo }}
+            transition={{ duration: 0.3, ease: easeOutExpo }}
           >
             <nav className="container-page flex h-full flex-col justify-between py-10" aria-label="Mobiel menu">
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {navigation.map((item, index) => (
                   <motion.li
                     key={item.href}
-                    initial={{ opacity: 0, y: 18 }}
+                    initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 * index, duration: 0.5, ease: easeOutExpo }}
+                    transition={{ delay: 0.04 * index, duration: 0.45, ease: easeOutExpo }}
                   >
                     <Link
                       href={item.href}
-                      className="display block py-3 text-4xl sm:text-5xl"
+                      className="display block py-3 text-4xl"
                       onClick={() => setOpen(false)}
                     >
                       {item.label}
@@ -140,8 +156,8 @@ export function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-              <div className="space-y-6 pb-8">
-                <Button href="#book" className="w-full" onClick={() => setOpen(false)}>
+              <div className="space-y-5 pb-10">
+                <Button href="#book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
                   Book Appointment
                 </Button>
                 <p className="eyebrow">{siteConfig.tagline}</p>

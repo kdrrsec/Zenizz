@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { gallery } from "@/data/gallery";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
@@ -12,22 +11,23 @@ export function GalleryPreview() {
   const items = gallery.slice(0, 6);
 
   return (
-    <section className="border-y border-line bg-paper-elevated py-24 md:py-32" aria-labelledby="gallery-preview-title">
+    <section className="border-y border-line bg-soft py-20 md:py-28" aria-labelledby="gallery-preview-title">
       <Container wide>
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <SectionHeading
-            eyebrow="Gallery"
-            title="Sfeer in beeld."
-            description="Interieur, craft en details — een blik op de wereld van ZENIZZ."
-          />
+        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
-            <Button href="/gallery" variant="secondary">
-              View Gallery
+            <p className="eyebrow mb-3">Lookbook</p>
+            <h2 id="gallery-preview-title" className="display text-4xl md:text-6xl">
+              Lifestyle gallery
+            </h2>
+          </Reveal>
+          <Reveal>
+            <Button href="/gallery" variant="soft">
+              View gallery
             </Button>
           </Reveal>
         </div>
 
-        <Stagger className="mt-16 grid auto-rows-[220px] gap-4 md:grid-cols-6 md:auto-rows-[260px]">
+        <Stagger className="grid auto-rows-[220px] gap-3 md:grid-cols-6 md:auto-rows-[280px]">
           {items.map((item, index) => (
             <StaggerItem
               key={item.id}
@@ -38,7 +38,7 @@ export function GalleryPreview() {
                 index === 2 && "md:col-span-2",
                 index === 3 && "md:col-span-2",
                 index === 4 && "md:col-span-2",
-                index === 5 && "md:col-span-6 md:row-span-1 md:h-[320px]",
+                index === 5 && "md:col-span-6 md:h-[340px]",
               )}
             >
               <Image
@@ -46,16 +46,12 @@ export function GalleryPreview() {
                 alt={item.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
             </StaggerItem>
           ))}
         </Stagger>
-
-        <h2 id="gallery-preview-title" className="sr-only">
-          Gallery
-        </h2>
       </Container>
     </section>
   );

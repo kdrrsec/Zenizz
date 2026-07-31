@@ -30,8 +30,8 @@ export function LoadingScreen() {
         >
           <div className="text-center">
             <motion.p
-              className="display text-5xl md:text-6xl tracking-tight"
-              initial={{ opacity: 0, y: 16 }}
+              className="font-mono text-sm font-semibold tracking-[0.2em] uppercase"
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: easeOutExpo }}
             >

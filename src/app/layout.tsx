@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope, IBM_Plex_Mono } from "next/font/google";
+import { Outfit, Source_Code_Pro } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
@@ -7,23 +7,23 @@ import { LoadingScreen, PageTransition } from "@/components/layout/LoadingScreen
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const sans = Manrope({
+const sans = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const mono = IBM_Plex_Mono({
+const mono = Source_Code_Pro({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -77,14 +77,6 @@ const jsonLd = {
     postalCode: siteConfig.address.postal,
     addressCountry: "NL",
   },
-  openingHoursSpecification: siteConfig.openingHours
-    .filter((h) => h.hours !== "Gesloten")
-    .map((h) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: h.day,
-      opens: h.hours.split(" – ")[0],
-      closes: h.hours.split(" – ")[1],
-    })),
 };
 
 export default function RootLayout({

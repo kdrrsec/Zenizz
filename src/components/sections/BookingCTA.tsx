@@ -7,35 +7,25 @@ import { Reveal } from "@/components/ui/Reveal";
 export function BookingCTA() {
   return (
     <section className="relative overflow-hidden py-28 md:py-36 text-paper" aria-labelledby="booking-cta-title">
-      <Image
-        src={images.cta}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover"
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-ink/70" />
+      <Image src={images.cta} alt="" fill sizes="100vw" className="object-cover" aria-hidden />
+      <div className="absolute inset-0 bg-black/65" />
 
       <Container className="relative z-10 text-center">
         <Reveal>
-          <p className="eyebrow mb-5 text-warm">Ready when you are</p>
-          <h2 id="booking-cta-title" className="display mx-auto max-w-4xl text-5xl md:text-7xl text-balance">
-            Boek je stoel.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-paper/85 leading-relaxed">
-            Kies een tijdstip dat past. Wij zorgen voor de rest — rust, precisie
-            en een knipbeurt die spreekt voor zich.
+          <p className="mb-5 font-mono text-[0.7rem] tracking-[0.12em] uppercase text-white/70">
+            Ready when you are
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <h2 id="booking-cta-title" className="display mx-auto max-w-4xl text-5xl md:text-7xl">
+            Book your chair.
+          </h2>
+          <p className="mx-auto mt-6 max-w-xl text-white/80 leading-relaxed">
+            Choose a time. We handle the rest — calm, precision, and a cut that speaks for itself.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button href="#book" variant="inverse">
               Book Appointment
             </Button>
-            <Button
-              href="/contact"
-              variant="secondary"
-              className="border-paper/35 text-paper hover:bg-paper hover:text-ink"
-            >
+            <Button href="/contact" variant="secondary" className="border-white/30 text-paper hover:bg-paper hover:text-ink">
               Contact
             </Button>
           </div>

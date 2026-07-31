@@ -20,18 +20,14 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <Reveal
-      className={cn(
-        "max-w-3xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
+      className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}
     >
       {eyebrow ? (
-        <p className={cn("eyebrow mb-5", light && "text-warm")}>{eyebrow}</p>
+        <p className={cn("eyebrow mb-4", light && "text-warm")}>{eyebrow}</p>
       ) : null}
       <h2
         className={cn(
-          "display text-4xl sm:text-5xl md:text-6xl text-balance",
+          "display text-4xl sm:text-5xl md:text-6xl",
           light ? "text-paper" : "text-ink",
         )}
       >
@@ -40,9 +36,9 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "mt-6 text-base md:text-lg leading-relaxed max-w-2xl",
+            "mt-5 text-base leading-relaxed md:text-lg max-w-2xl",
             align === "center" && "mx-auto",
-            light ? "text-warm/90" : "text-muted",
+            light ? "text-warm/90" : "text-faded",
           )}
         >
           {description}

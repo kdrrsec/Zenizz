@@ -1,22 +1,24 @@
-import { siteConfig } from "@/data/site";
+import { siteConfig, images } from "@/data/site";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BookingWidget } from "@/components/booking/BookingWidget";
 import { Reveal } from "@/components/ui/Reveal";
 import { ImageReveal } from "@/components/ui/ImageReveal";
-import { images } from "@/data/site";
 
 export function ContactPreview() {
   return (
-    <section className="py-24 md:py-32" aria-labelledby="contact-preview-title">
+    <section className="border-t border-line bg-paper py-20 md:py-28" aria-labelledby="contact-preview-title">
       <Container wide>
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Contact"
-              title="Bezoek het atelier."
-              description="Midden in Amsterdam. Kom binnen, neem plaats, en laat de rust het werk doen."
-            />
+            <Reveal>
+              <p className="eyebrow mb-4">Contact</p>
+              <h2 id="contact-preview-title" className="display text-4xl md:text-6xl">
+                Visit the atelier
+              </h2>
+              <p className="mt-5 max-w-md text-faded leading-relaxed">
+                Mid-Amsterdam. Come in, take a seat, and let the craft do the talking.
+              </p>
+            </Reveal>
 
             <Reveal className="mt-10 space-y-8">
               <div>
@@ -29,11 +31,11 @@ export function ContactPreview() {
               </div>
               <div>
                 <p className="eyebrow mb-3">Hours</p>
-                <ul className="space-y-2 text-muted">
+                <ul className="max-w-xs space-y-2 text-sm">
                   {siteConfig.openingHours.map((item) => (
-                    <li key={item.day} className="flex justify-between gap-6 max-w-xs">
-                      <span>{item.day}</span>
-                      <span className="text-ink">{item.hours}</span>
+                    <li key={item.day} className="flex justify-between gap-6">
+                      <span className="text-faded">{item.day}</span>
+                      <span className="font-mono tracking-wide">{item.hours}</span>
                     </li>
                   ))}
                 </ul>
@@ -41,12 +43,12 @@ export function ContactPreview() {
               <div>
                 <p className="eyebrow mb-3">Reach us</p>
                 <p>
-                  <a href={siteConfig.phoneHref} className="hover:opacity-70 transition-opacity">
+                  <a href={siteConfig.phoneHref} className="underline-anim">
                     {siteConfig.phone}
                   </a>
                 </p>
                 <p className="mt-1">
-                  <a href={`mailto:${siteConfig.email}`} className="hover:opacity-70 transition-opacity">
+                  <a href={`mailto:${siteConfig.email}`} className="underline-anim">
                     {siteConfig.email}
                   </a>
                 </p>
@@ -54,7 +56,7 @@ export function ContactPreview() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-7 space-y-8">
+          <div className="space-y-8 lg:col-span-7">
             <ImageReveal
               src={images.contact}
               alt="Barber tools on a clean station"
@@ -65,10 +67,6 @@ export function ContactPreview() {
             <BookingWidget />
           </div>
         </div>
-
-        <h2 id="contact-preview-title" className="sr-only">
-          Contact
-        </h2>
       </Container>
     </section>
   );

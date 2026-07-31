@@ -104,12 +104,12 @@ export function BookingWidget({
       aria-labelledby="booking-title"
       className={cn("scroll-mt-28", className)}
     >
-      <div className="border border-line bg-paper-elevated p-8 md:p-12">
+      <div className="border border-line bg-soft p-8 md:p-12">
         <p className="eyebrow mb-4">Reservations</p>
         <h2 id="booking-title" className="display text-3xl md:text-5xl">
           {title}
         </h2>
-        <p className="mt-4 max-w-2xl text-muted leading-relaxed">{description}</p>
+        <p className="mt-4 max-w-2xl text-faded leading-relaxed">{description}</p>
 
         {showEmbed ? (
           <div className="mt-8 overflow-hidden border border-line bg-paper">
@@ -135,7 +135,7 @@ export function BookingWidget({
 
         {provider === "none" ? (
           <div className="mt-10 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-            <div className="space-y-3 text-sm text-muted leading-relaxed">
+            <div className="space-y-3 text-sm text-faded leading-relaxed">
               <p>
                 <span className="font-mono uppercase tracking-[0.14em] text-ink">
                   Integration ready

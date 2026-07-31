@@ -11,15 +11,18 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, className }: PageHeroProps) {
   return (
-    <header className={cn("border-b border-line pt-36 pb-16 md:pt-44 md:pb-24", className)}>
+    <header
+      className={cn(
+        "border-b border-line bg-paper pt-[calc(var(--announce-height)+var(--nav-height)+4rem)] pb-14 md:pb-20",
+        className,
+      )}
+    >
       <Container wide>
         <Reveal>
           <p className="eyebrow mb-5">{eyebrow}</p>
-          <h1 className="display max-w-5xl text-[clamp(2.8rem,8vw,6.5rem)] text-balance">
-            {title}
-          </h1>
+          <h1 className="display max-w-5xl text-[clamp(2.6rem,8vw,6rem)]">{title}</h1>
           {description ? (
-            <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-muted">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-faded md:text-lg">
               {description}
             </p>
           ) : null}

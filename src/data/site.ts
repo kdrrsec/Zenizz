@@ -2,9 +2,9 @@ import type { NavItem, SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "ZENIZZ",
-  tagline: "Craft. Presence. Precision.",
+  tagline: "We take this craft very seriously.",
   description:
-    "ZENIZZ is a modern barbershop atelier where craftsmanship meets calm. Precision cuts, thoughtful rituals, and a space designed to feel like a quiet pause in your day.",
+    "ZENIZZ is a modern barbershop atelier in Amsterdam. Precision cuts, calm rituals, and a chair experience built around craft — not speed.",
   url: "https://zenizz.nl",
   email: "hello@zenizz.nl",
   phone: "+31 20 123 4567",
