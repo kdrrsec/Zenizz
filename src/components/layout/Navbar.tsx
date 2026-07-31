@@ -38,13 +38,15 @@ export function Navbar() {
       <div className="fixed inset-x-0 top-0 z-[60] border-b border-black/5 bg-paper text-ink">
         <div className="marquee py-2">
           <div className="marquee-track eyebrow !text-ink/70">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-8 px-4">
-                <span>We take this craft very seriously</span>
-                <span aria-hidden>·</span>
-                <span>Amsterdam atelier</span>
+                <span>Istanbul</span>
                 <span aria-hidden>·</span>
                 <span>Book your chair</span>
+                <span aria-hidden>·</span>
+                <span>Premium barber experience</span>
+                <span aria-hidden>·</span>
+                <span>Zenizz Barbershop</span>
                 <span aria-hidden>·</span>
               </span>
             ))}

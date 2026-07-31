@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 /**
@@ -151,10 +152,13 @@ export function BookingWidget({
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-              <Button href="mailto:hello@zenizz.nl?subject=Afspraak%20aanvraag">
+              <Button
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Appointment request")}`}
+                variant="primary"
+              >
                 Request Appointment
               </Button>
-              <Button href="tel:+31201234567" variant="secondary">
+              <Button href={siteConfig.phoneHref} variant="secondary">
                 Call Studio
               </Button>
             </div>

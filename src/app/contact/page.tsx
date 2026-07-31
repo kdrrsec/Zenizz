@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Bezoek ZENIZZ aan de Prinsengracht in Amsterdam of boek een afspraak. Bekijk openingstijden en contactgegevens.",
+    "Visit ZENIZZ in Beşiktaş, Istanbul or book an appointment. View opening hours and contact details.",
   alternates: {
     canonical: "/contact",
   },
@@ -31,7 +31,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-10">
               <Reveal>
                 <p className="eyebrow mb-3">Studio</p>
-                <h2 className="display text-4xl">ZENIZZ Amsterdam</h2>
+                <h2 className="display text-4xl">ZENIZZ Istanbul</h2>
                 <address className="mt-5 not-italic text-muted leading-relaxed">
                   {siteConfig.address.street}
                   <br />

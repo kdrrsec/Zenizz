@@ -16,7 +16,7 @@ export function ContactPreview() {
                 Visit the atelier
               </h2>
               <p className="mt-5 max-w-md text-faded leading-relaxed">
-                Mid-Amsterdam. Come in, take a seat, and let the craft do the talking.
+                In the heart of Beşiktaş, Istanbul. Come in, take a seat, and let the craft do the talking.
               </p>
             </Reveal>
 

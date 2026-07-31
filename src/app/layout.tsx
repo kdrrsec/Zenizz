@@ -31,29 +31,30 @@ const mono = Source_Code_Pro({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Modern Barber Atelier Amsterdam`,
+    default: `${siteConfig.name} | Premium Barbershop Istanbul`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "barbershop Amsterdam",
+    "barbershop Istanbul",
+    "Beşiktaş barber",
     "modern barber",
     "fade",
     "hot towel shave",
     "ZENIZZ",
-    "herenkapper",
+    "premium barbershop",
   ],
   openGraph: {
     type: "website",
-    locale: "nl_NL",
+    locale: "tr_TR",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Modern Barber Atelier`,
+    title: `${siteConfig.name} | Premium Barbershop Istanbul`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Modern Barber Atelier`,
+    title: `${siteConfig.name} | Premium Barbershop Istanbul`,
     description: siteConfig.description,
   },
   robots: {
@@ -75,7 +76,7 @@ const jsonLd = {
     streetAddress: siteConfig.address.street,
     addressLocality: siteConfig.address.city,
     postalCode: siteConfig.address.postal,
-    addressCountry: "NL",
+    addressCountry: "TR",
   },
 };
 

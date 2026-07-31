@@ -10,7 +10,7 @@ import { BookingWidget } from "@/components/booking/BookingWidget";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ontdek het verhaal achter ZENIZZ — een modern barbershop atelier in Amsterdam, gebouwd rond craft, presence en precisie.",
+    "Discover the story behind ZENIZZ — a premium barbershop in Istanbul, built around craft, presence and precision.",
   alternates: {
     canonical: "/about",
   },

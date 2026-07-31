@@ -7,7 +7,7 @@ import { BookingWidget } from "@/components/booking/BookingWidget";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Bekijk de ZENIZZ gallery — interieur, cuts, details en sfeer van ons Amsterdam barbershop atelier.",
+    "Explore the ZENIZZ gallery — interiors, cuts, details and atmosphere from our Istanbul barbershop.",
   alternates: {
     canonical: "/gallery",
   },
