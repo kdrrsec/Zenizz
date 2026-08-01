@@ -13,7 +13,7 @@ const LOGO = {
 } as const;
 
 /**
- * Zenizz brand lockup — fixed navbar size.
+ * Zenizz brand lockup from public/ZenizV4.png (cropped + transparent).
  * Inline height beats the global `img { height: auto }` rule.
  */
 export function Logo({ className, variant = "dark" }: LogoProps) {
@@ -21,7 +21,7 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
     <Image
       src={LOGO[variant]}
       alt="Zenizz"
-      width={132}
+      width={160}
       height={40}
       priority
       className={cn("block select-none object-contain object-left", className)}
