@@ -21,11 +21,11 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
     <Image
       src={LOGO[variant]}
       alt="Zenizz"
-      width={160}
-      height={40}
+      width={200}
+      height={50}
       priority
       className={cn("block select-none object-contain object-left", className)}
-      style={{ width: "auto", height: "1.75rem", maxHeight: "1.75rem" }}
+      style={{ width: "auto", height: "2.25rem", maxHeight: "2.25rem" }}
     />
   );
 }

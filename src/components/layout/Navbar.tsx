@@ -92,7 +92,7 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="inline-flex h-8 shrink-0 items-center transition-opacity hover:opacity-70"
+            className="ml-3 inline-flex h-10 shrink-0 items-center transition-opacity hover:opacity-70 md:ml-6 lg:ml-8"
             aria-label={`${siteConfig.name} home`}
           >
             <Logo variant={solid ? "dark" : "light"} />
