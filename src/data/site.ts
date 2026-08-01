@@ -16,8 +16,8 @@ export const siteConfig: SiteConfig = {
     country: "Türkiye",
   },
   social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
+    instagram: "https://www.instagram.com/yusuf_zencirkran/",
+    facebook: "https://www.facebook.com/yusuf.zencirkiran.77/",
   },
   openingHours: [
     { day: "Monday", hours: "Closed" },
@@ -39,7 +39,11 @@ export const navigation: NavItem[] = [
 ];
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=2400&q=80",
+  /** Hero triptych — color-matched editorial set from Yusuf’s public feed */
+  hero: "/media/hero-left.jpg",
+  heroLeft: "/media/hero-left.jpg",
+  heroDetail: "/media/hero-detail.jpg",
+  heroStory: "/media/hero-story.jpg",
   about: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80",
   aboutSecondary:
     "https://images.unsplash.com/photo-1633681926022-84c1038a2c84?auto=format&fit=crop&w=1200&q=80",

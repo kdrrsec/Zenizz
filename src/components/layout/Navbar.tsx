@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-
 import { useEffect, useState } from "react";
 import { navigation, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
 
@@ -91,10 +92,10 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="font-mono text-sm font-semibold tracking-[0.14em] uppercase transition-opacity hover:opacity-60"
+            className="ml-3 inline-flex h-10 shrink-0 items-center transition-opacity hover:opacity-70 md:ml-6 lg:ml-8"
             aria-label={`${siteConfig.name} home`}
           >
-            {siteConfig.name}
+            <Logo variant={solid ? "dark" : "light"} />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">

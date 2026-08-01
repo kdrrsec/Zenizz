@@ -24,13 +24,14 @@ const sizes = {
 
 const variants = {
   primary:
-    "bg-[#111111] text-white border-0 hover:bg-[#2A2A2A] hover:-translate-y-[2px]",
-  soft: "bg-soft text-ink hover:bg-line border border-soft hover:-translate-y-[1px]",
+    "bg-[#111111] !text-white border-0 hover:bg-[#2A2A2A] hover:-translate-y-[2px]",
+  soft: "bg-soft !text-ink hover:bg-line border border-soft hover:-translate-y-[1px]",
   secondary:
-    "bg-transparent text-ink border border-ink/15 hover:border-ink hover:-translate-y-[1px]",
-  ghost: "bg-transparent text-ink border border-transparent hover:bg-soft",
+    "bg-transparent !text-ink border border-ink/15 hover:border-ink hover:-translate-y-[1px]",
+  ghost: "bg-transparent !text-ink border border-transparent hover:bg-soft",
+  // !text-* beats global `a { color: inherit }` over dark transparent nav
   inverse:
-    "bg-paper text-ink border border-paper hover:bg-transparent hover:text-paper",
+    "bg-paper !text-ink border border-paper hover:bg-transparent hover:!text-paper",
   outlineLight:
     "bg-transparent !text-white border border-white/35 hover:bg-white hover:!text-black hover:-translate-y-[2px]",
 };
