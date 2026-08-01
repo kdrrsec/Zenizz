@@ -92,10 +92,10 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="text-[1.05rem] transition-opacity hover:opacity-70 md:text-[1.15rem]"
+            className="transition-opacity hover:opacity-70"
             aria-label={`${siteConfig.name} home`}
           >
-            <Logo />
+            <Logo variant={solid ? "dark" : "light"} />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">

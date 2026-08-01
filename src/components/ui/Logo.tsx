@@ -1,40 +1,43 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
   className?: string;
-  /** Show wordmark next to the mark (default: true) */
-  withWordmark?: boolean;
+  /** light = over dark hero; dark = solid/white nav */
+  variant?: "light" | "dark";
 };
 
-/**
- * Zenizz brand mark — three parallel diagonal strokes + wordmark.
- * Uses currentColor so it adapts to transparent (light) and solid (dark) nav states.
- */
-export function Logo({ className, withWordmark = true }: LogoProps) {
-  return (
-    <span
-      className={cn("inline-flex items-center gap-3 text-current", className)}
-      aria-hidden
-    >
-      <svg
-        viewBox="0 0 120 120"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-[1.35em] w-[1.35em] shrink-0"
-      >
-        <path d="M10 14h36L28 106H-8z" />
-        <path d="M46 14h36L64 106H28z" />
-        <path d="M82 14h36L100 106H64z" />
-      </svg>
+const LOGO = {
+  dark: {
+    src: "/brand/zenizz-logo.png",
+    width: 1168,
+    height: 240,
+  },
+  light: {
+    src: "/brand/zenizz-logo-light.png",
+    width: 1168,
+    height: 240,
+  },
+} as const;
 
-      {withWordmark ? (
-        <>
-          <span className="hidden h-[0.95em] w-px bg-current opacity-40 sm:block" />
-          <span className="font-display text-[0.95em] font-semibold tracking-[0.24em]">
-            ZENIZZ
-          </span>
-        </>
-      ) : null}
-    </span>
+/**
+ * Zenizz brand lockup (Z mark + wordmark).
+ * Light variant for transparent hero nav; dark/metallic for solid nav.
+ */
+export function Logo({ className, variant = "dark" }: LogoProps) {
+  const asset = LOGO[variant];
+
+  return (
+    <Image
+      src={asset.src}
+      alt="Zenizz"
+      width={asset.width}
+      height={asset.height}
+      priority
+      className={cn(
+        "h-7 w-auto select-none object-contain object-left md:h-8",
+        className,
+      )}
+    />
   );
 }
