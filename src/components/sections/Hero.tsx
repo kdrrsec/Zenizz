@@ -17,8 +17,8 @@ const container: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.55,
+      staggerChildren: 0.12,
+      delayChildren: 0.35,
     },
   },
 };
@@ -32,6 +32,51 @@ const fade: Variants = {
   },
 };
 
+const panelReveal: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 1.25, ease: easeOutExpo },
+  },
+};
+
+type PanelProps = {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  objectPosition?: string;
+  className?: string;
+};
+
+function HeroPanel({
+  src,
+  alt,
+  priority,
+  objectPosition = "center",
+  className,
+}: PanelProps) {
+  return (
+    <motion.div variants={panelReveal} className={`relative overflow-hidden ${className ?? ""}`}>
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.06 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.6, ease: easeOutExpo }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 34vw"
+          className="object-cover"
+          style={{ objectPosition }}
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export function Hero() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
@@ -42,61 +87,78 @@ export function Hero() {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    reduce ? ["0%", "0%"] : ["0%", "12%"],
-  );
-  const mediaScale = useTransform(
-    scrollYProgress,
-    [0, 1],
-    reduce ? [1, 1] : [1, 1.06],
+    reduce ? ["0%", "0%"] : ["0%", "8%"],
   );
 
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-paper"
+      className="relative min-h-[100svh] overflow-hidden bg-ink text-paper"
       aria-label="Hero"
     >
-      {/* Full-bleed authentic studio still — vertical craft photography cropped for atmosphere */}
       <motion.div style={{ y }} className="absolute inset-0">
-        <motion.div
-          className="absolute inset-0 origin-center"
-          style={{ scale: mediaScale }}
-          initial={reduce ? false : { scale: 1.04, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.6, ease: easeOutExpo }}
-        >
-          {/* object-contain zooms out the vertical craft still so the shears read clearly */}
+        {/* Mobile: one calm still */}
+        <div className="absolute inset-0 md:hidden">
           <Image
             src={images.hero}
-            alt="Gold shears resting on a tattooed forearm — Zenizz Barbershop craft"
+            alt="Gold shears resting on a tattooed forearm — Zenizz craft"
             fill
             priority
             sizes="100vw"
-            className="object-contain object-center"
+            className="object-cover object-[center_55%]"
+          />
+        </div>
+
+        {/* Desktop: after cut · craft · Yusuf */}
+        <motion.div
+          className="absolute inset-0 hidden md:grid md:grid-cols-3"
+          variants={container}
+          initial={reduce ? false : "hidden"}
+          animate="visible"
+        >
+          <HeroPanel
+            src={images.heroAfter}
+            alt="Fresh fade after a Zenizz cut"
+            priority
+            objectPosition="center 18%"
+            className="h-full"
+          />
+          <HeroPanel
+            src={images.hero}
+            alt="Gold shears resting on a tattooed forearm — Zenizz craft"
+            priority
+            objectPosition="center 55%"
+            className="h-full"
+          />
+          <HeroPanel
+            src={images.heroYusuf}
+            alt="Yusuf Zencirkıran with a client at Zenizz Barbershop"
+            priority
+            objectPosition="center 22%"
+            className="h-full"
           />
         </motion.div>
 
-        {/* Quiet atmosphere — keep the craft visible, text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-black/45 md:from-black/72 md:via-black/20 md:to-black/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
       </motion.div>
 
-      <div className="relative z-10 w-full pt-[calc(var(--announce-height)+var(--nav-height)+2rem)] pb-24 md:pb-28">
-        <div className="container-wide">
+      <div className="relative z-10 flex min-h-[100svh] w-full items-center pt-[calc(var(--announce-height)+var(--nav-height))] pb-20">
+        <div className="container-wide w-full">
           <motion.div
             variants={container}
             initial={reduce ? false : "hidden"}
             animate="visible"
-            className="flex min-h-[min(62svh,36rem)] max-w-xl flex-col justify-center"
+            className="flex max-w-md flex-col justify-center md:max-w-lg"
           >
             <motion.p
               variants={fade}
-              className="font-display text-[clamp(2.75rem,8vw,5.5rem)] font-semibold leading-[0.92] tracking-[0.08em]"
+              className="font-display text-[clamp(2.5rem,7vw,4.75rem)] font-semibold leading-[0.92] tracking-[0.08em]"
             >
               {siteConfig.name}
             </motion.p>
 
-            <motion.div variants={fade} className="mt-8 space-y-2 md:mt-10">
+            <motion.div variants={fade} className="mt-7 space-y-2 md:mt-9">
               <p className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-paper/80">
                 Premium Barber Studio
               </p>
@@ -107,7 +169,7 @@ export function Hero() {
 
             <motion.div
               variants={fade}
-              className="mt-12 flex w-full flex-col gap-3 sm:mt-14 sm:w-auto sm:flex-row sm:items-center"
+              className="mt-10 flex w-full flex-col gap-3 sm:mt-12 sm:w-auto sm:flex-row sm:items-center"
             >
               <Button href="#book" variant="inverse" className="w-full sm:w-auto" showArrow>
                 Book Appointment
