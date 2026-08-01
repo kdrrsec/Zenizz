@@ -41,6 +41,7 @@ export const navigation: NavItem[] = [
 export const images = {
   hero: "/media/hero.jpg",
   heroAfter: "/media/hero-after.jpg",
+  heroDetail: "/media/hero-detail.jpg",
   heroYusuf: "/media/hero-yusuf.jpg",
   about: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80",
   aboutSecondary:
