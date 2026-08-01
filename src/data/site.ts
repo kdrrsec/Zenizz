@@ -39,10 +39,11 @@ export const navigation: NavItem[] = [
 ];
 
 export const images = {
-  hero: "/media/hero.jpg",
-  heroAfter: "/media/hero-after.jpg",
+  /** Hero triptych — color-matched editorial set from Yusuf’s public feed */
+  hero: "/media/hero-left.jpg",
+  heroLeft: "/media/hero-left.jpg",
   heroDetail: "/media/hero-detail.jpg",
-  heroYusuf: "/media/hero-yusuf.jpg",
+  heroStory: "/media/hero-story.jpg",
   about: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80",
   aboutSecondary:
     "https://images.unsplash.com/photo-1633681926022-84c1038a2c84?auto=format&fit=crop&w=1200&q=80",

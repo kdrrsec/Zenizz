@@ -18,7 +18,7 @@ const copyContainer: Variants = {
   visible: {
     transition: {
       staggerChildren: 0.16,
-      delayChildren: 0.6,
+      delayChildren: 0.65,
     },
   },
 };
@@ -84,7 +84,7 @@ function EditorialPanel({
     <motion.div variants={panelReveal} className={`relative overflow-hidden ${className ?? ""}`}>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.08 }}
+        initial={{ scale: 1.07 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.75, ease: easeOutExpo }}
       >
@@ -115,7 +115,7 @@ export function Hero() {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    reduce ? ["0%", "0%"] : ["0%", "7%"],
+    reduce ? ["0%", "0%"] : ["0%", "6%"],
   );
 
   return (
@@ -125,23 +125,24 @@ export function Hero() {
       aria-label="Hero"
     >
       <motion.div style={{ y }} className="absolute inset-0">
-        {/* Mobile: dominant result still */}
+        {/* Mobile: dominant result */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src={images.heroAfter}
-            alt="Precise burst fade after a Zenizz cut"
+            src={images.heroLeft}
+            alt="Precision taper fade — Zenizz Barbershop"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_20%]"
+            className="object-cover object-[center_30%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
         </div>
 
         {/*
-          Desktop editorial composition — unequal visual weight:
-          Dominant result (7/12) + craft stack detail/atmosphere (5/12)
+          Desktop 3-panel editorial (kept):
+          Left dominant result · top detail · bottom craft-in-context
+          One story: the cut — result, texture, atelier.
         */}
         <motion.div
           className="absolute inset-0 hidden gap-[3px] bg-ink md:grid md:grid-cols-12"
@@ -150,13 +151,13 @@ export function Hero() {
           animate="visible"
         >
           <EditorialPanel
-            src={images.heroAfter}
-            alt="Precise burst fade after a Zenizz cut"
+            src={images.heroLeft}
+            alt="Precision taper fade from behind — Zenizz Barbershop"
             priority
-            objectPosition="center 18%"
+            objectPosition="center 28%"
             sizes="58vw"
             className="col-span-7 h-full"
-            overlay="bg-gradient-to-r from-black/50 via-black/10 to-transparent"
+            overlay="bg-gradient-to-r from-black/45 via-black/10 to-transparent"
           />
 
           <motion.div
@@ -165,42 +166,43 @@ export function Hero() {
           >
             <EditorialPanel
               src={images.heroDetail}
-              alt="Close-up taper fade — Zenizz craftsmanship"
+              alt="Close-up hair texture and fade detail"
+              priority
+              objectPosition="center 40%"
+              sizes="42vw"
+              className="row-span-5 h-full"
+              overlay="bg-black/[0.08]"
+            />
+            <EditorialPanel
+              src={images.heroStory}
+              alt="Finished burst fade in the Zenizz atelier"
               priority
               objectPosition="center 35%"
               sizes="42vw"
-              className="row-span-5 h-full"
-              overlay="bg-black/10"
-            />
-            <EditorialPanel
-              src={images.hero}
-              alt="Gold shears — quiet craft detail"
-              priority
-              objectPosition="center 62%"
-              sizes="42vw"
               className="row-span-7 h-full"
-              overlay="bg-black/15"
+              overlay="bg-black/10"
             />
           </motion.div>
         </motion.div>
       </motion.div>
 
-      <div className="relative z-10 flex min-h-[100svh] w-full items-end md:items-center pt-[calc(var(--announce-height)+var(--nav-height))] pb-16 md:pb-28">
+      {/* Copy lower — more air, imagery leads */}
+      <div className="relative z-10 flex min-h-[100svh] w-full items-end pt-[calc(var(--announce-height)+var(--nav-height))] pb-14 md:pb-20 lg:pb-24">
         <div className="container-wide w-full">
           <motion.div
             variants={copyContainer}
             initial={reduce ? false : "hidden"}
             animate="visible"
-            className="flex max-w-[17rem] flex-col sm:max-w-[19rem] md:max-w-[21rem]"
+            className="mb-2 flex max-w-[16rem] flex-col sm:max-w-[18rem] md:mb-4 md:max-w-[20rem]"
           >
             <motion.p
               variants={fade}
-              className="font-display text-[clamp(2.05rem,5.2vw,3.95rem)] font-semibold leading-[0.96] tracking-[0.1em]"
+              className="font-display text-[clamp(2rem,5vw,3.75rem)] font-semibold leading-[0.96] tracking-[0.1em]"
             >
               {siteConfig.name}
             </motion.p>
 
-            <motion.div variants={fade} className="mt-11 space-y-1.5 md:mt-14">
+            <motion.div variants={fade} className="mt-12 space-y-1.5 md:mt-14">
               <p className="font-mono text-[0.66rem] tracking-[0.24em] uppercase text-paper/65">
                 Istanbul
               </p>
@@ -209,20 +211,9 @@ export function Hero() {
               </p>
             </motion.div>
 
-            <motion.div
-              variants={fade}
-              className="mt-[4.5rem] flex w-full flex-col gap-3.5 sm:mt-24 sm:w-auto sm:flex-row sm:items-center"
-            >
+            <motion.div variants={fade} className="mt-20 sm:mt-24">
               <Button href="#book" variant="inverse" className="w-full sm:w-auto" showArrow>
                 Book Appointment
-              </Button>
-              <Button
-                href="/services"
-                variant="outlineLight"
-                className="w-full sm:w-auto"
-                showArrow={false}
-              >
-                View Services
               </Button>
             </motion.div>
           </motion.div>
