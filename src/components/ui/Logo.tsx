@@ -8,36 +8,24 @@ type LogoProps = {
 };
 
 const LOGO = {
-  dark: {
-    src: "/brand/zenizz-logo.png",
-    width: 794,
-    height: 240,
-  },
-  light: {
-    src: "/brand/zenizz-logo-light.png",
-    width: 794,
-    height: 240,
-  },
+  dark: "/brand/zenizz-logo.png",
+  light: "/brand/zenizz-logo-light.png",
 } as const;
 
 /**
- * Zenizz brand lockup (Z mark + wordmark).
- * Light variant for transparent hero nav; dark/metallic for solid nav.
+ * Zenizz brand lockup — fixed navbar size.
+ * Inline height beats the global `img { height: auto }` rule.
  */
 export function Logo({ className, variant = "dark" }: LogoProps) {
-  const asset = LOGO[variant];
-
   return (
     <Image
-      src={asset.src}
+      src={LOGO[variant]}
       alt="Zenizz"
-      width={asset.width}
-      height={asset.height}
+      width={132}
+      height={40}
       priority
-      className={cn(
-        "h-7 w-auto select-none object-contain object-left md:h-8",
-        className,
-      )}
+      className={cn("block select-none object-contain object-left", className)}
+      style={{ width: "auto", height: "1.75rem", maxHeight: "1.75rem" }}
     />
   );
 }

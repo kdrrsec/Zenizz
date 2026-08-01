@@ -92,7 +92,7 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="transition-opacity hover:opacity-70"
+            className="inline-flex h-8 shrink-0 items-center transition-opacity hover:opacity-70"
             aria-label={`${siteConfig.name} home`}
           >
             <Logo variant={solid ? "dark" : "light"} />
