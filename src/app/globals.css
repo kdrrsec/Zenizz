@@ -13,8 +13,8 @@
   --paper-elevated: #ffffff;
   --accent: #000000;
   --overlay: rgba(0, 0, 0, 0.35);
-  --nav-height: 4rem;
-  --announce-height: 2.25rem;
+  --nav-height: 4.75rem; /* ~76px — editorial luxury bar */
+  --announce-height: 2rem;
   --background: var(--paper);
   --foreground: var(--ink);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);

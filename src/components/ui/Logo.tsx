@@ -13,8 +13,8 @@ const LOGO = {
 } as const;
 
 /**
- * Zenizz brand lockup from public/ZenizV4.png (cropped + transparent).
- * Inline height beats the global `img { height: auto }` rule.
+ * Zenizz brand lockup.
+ * Explicit height in style beats global `img { height: auto }`.
  */
 export function Logo({ className, variant = "dark" }: LogoProps) {
   return (
@@ -24,8 +24,8 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
       width={200}
       height={50}
       priority
-      className={cn("block select-none object-contain object-left", className)}
-      style={{ width: "auto", height: "2.25rem", maxHeight: "2.25rem" }}
+      className={cn("block h-7 w-auto select-none object-contain object-left md:h-8", className)}
+      style={{ width: "auto", height: "2rem", maxHeight: "2rem" }}
     />
   );
 }
