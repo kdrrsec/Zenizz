@@ -10,12 +10,12 @@ type LogoProps = {
 const LOGO = {
   dark: {
     src: "/brand/zenizz-logo.png",
-    width: 1168,
+    width: 794,
     height: 240,
   },
   light: {
     src: "/brand/zenizz-logo-light.png",
-    width: 1168,
+    width: 794,
     height: 240,
   },
 } as const;
