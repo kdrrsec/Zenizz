@@ -61,23 +61,24 @@ export function Hero() {
         <motion.div
           className="absolute inset-0 origin-center"
           style={{ scale: mediaScale }}
-          initial={reduce ? false : { scale: 1.1, opacity: 0 }}
+          initial={reduce ? false : { scale: 1.04, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.6, ease: easeOutExpo }}
         >
+          {/* object-contain zooms out the vertical craft still so the shears read clearly */}
           <Image
             src={images.hero}
             alt="Gold shears resting on a tattooed forearm — Zenizz Barbershop craft"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_42%]"
+            className="object-contain object-center"
           />
         </motion.div>
 
         {/* Quiet atmosphere — keep the craft visible, text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
       </motion.div>
 
       <div className="relative z-10 w-full pt-[calc(var(--announce-height)+var(--nav-height)+2rem)] pb-24 md:pb-28">
