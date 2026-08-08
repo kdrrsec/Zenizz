@@ -39,7 +39,7 @@ export const navigation: NavItem[] = [
 ];
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=2400&q=80",
+  hero: "/Zenizz.png",
   about: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80",
   aboutSecondary:
     "https://images.unsplash.com/photo-1633681926022-84c1038a2c84?auto=format&fit=crop&w=1200&q=80",
