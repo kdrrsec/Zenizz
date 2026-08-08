@@ -54,7 +54,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[65%_30%] md:object-[center_30%]"
         />
         {/* Soft left wash only — keeps the image breathing on the right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
