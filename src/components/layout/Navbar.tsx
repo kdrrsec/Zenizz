@@ -50,6 +50,21 @@ export function Navbar() {
 
       <header className="fixed inset-x-0 top-[var(--announce-height)] z-50 border-b border-line bg-paper/95 text-ink backdrop-blur-md">
         <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="relative z-50 ml-3 flex h-9 w-[150px] items-center transition-opacity hover:opacity-70 sm:ml-6"
+            aria-label={`${siteConfig.name} home`}
+          >
+            <Image
+              src="/zenizz-logo.png"
+              alt={siteConfig.name}
+              fill
+              priority
+              sizes="150px"
+              className="object-contain object-left"
+            />
+          </Link>
+
           <button
             type="button"
             className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
@@ -73,21 +88,6 @@ export function Navbar() {
               />
             </div>
           </button>
-
-          <Link
-            href="/"
-            className="relative z-50 ml-3 flex h-9 w-[150px] items-center transition-opacity hover:opacity-70 sm:ml-6"
-            aria-label={`${siteConfig.name} home`}
-          >
-            <Image
-              src="/zenizz-logo.png"
-              alt={siteConfig.name}
-              fill
-              priority
-              sizes="150px"
-              className="object-contain object-left"
-            />
-          </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">
             {navigation.map((item) => {
