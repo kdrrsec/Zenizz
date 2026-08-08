@@ -57,7 +57,7 @@ export function Hero() {
           className="object-cover object-[center_30%]"
         />
         {/* Soft left wash only — keeps the image breathing on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
       </motion.div>
 
       <div className="relative z-10 w-full px-0 py-28 md:py-32">
@@ -66,20 +66,25 @@ export function Hero() {
             variants={heroContainer}
             initial={reduce ? false : "hidden"}
             animate="visible"
-            className="w-full max-w-[min(100%,28rem)] sm:max-w-[min(100%,32rem)] md:max-w-[42%]"
+            className="w-full max-w-[min(100%,28rem)] sm:max-w-[min(100%,40rem)] md:max-w-[80%] lg:max-w-[70rem]"
           >
             <motion.h1
               variants={heroFade}
-              className="display text-[clamp(2.15rem,5.5vw,4.25rem)] !leading-[1.08] !tracking-[-0.035em]"
+              className="display whitespace-nowrap text-[clamp(2.75rem,6vw,5.5rem)] !font-black !leading-[0.95] !tracking-tight max-[480px]:whitespace-normal"
             >
-              Premium barbering.
-              <br />
-              Crafted in Istanbul.
+              Istanbul&apos;s finest cut.
             </motion.h1>
+
+            <motion.p
+              variants={heroFade}
+              className="mt-3 text-sm font-normal normal-case tracking-wide text-white/70 sm:text-base"
+            >
+              Premium barbering, crafted in Istanbul.
+            </motion.p>
 
             <motion.div
               variants={heroFade}
-              className="mt-12 flex w-full flex-col gap-3 sm:mt-14 sm:w-auto sm:flex-row sm:items-center"
+              className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center"
             >
               <Button href="#book" variant="primary" className="w-full sm:w-auto" showArrow>
                 Book Appointment

@@ -40,6 +40,8 @@ export function Navbar() {
           <div className="marquee-track eyebrow !text-ink/70">
             {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-8 px-4">
+                <span>Istanbul&apos;s finest cut</span>
+                <span aria-hidden>·</span>
                 <span>Istanbul</span>
                 <span aria-hidden>·</span>
                 <span>Book your chair</span>
