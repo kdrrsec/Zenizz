@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
@@ -91,10 +92,17 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="font-mono text-sm font-semibold tracking-[0.14em] uppercase transition-opacity hover:opacity-60"
+            className="relative z-50 flex h-7 w-[110px] items-center transition-opacity hover:opacity-70"
             aria-label={`${siteConfig.name} home`}
           >
-            {siteConfig.name}
+            <Image
+              src="/zenizz-logo.png"
+              alt={siteConfig.name}
+              fill
+              priority
+              sizes="110px"
+              className="object-contain object-left"
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">
