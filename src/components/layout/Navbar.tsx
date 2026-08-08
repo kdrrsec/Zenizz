@@ -76,7 +76,7 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="relative z-50 flex h-7 w-[110px] items-center transition-opacity hover:opacity-70"
+            className="relative z-50 ml-3 flex h-9 w-[150px] items-center transition-opacity hover:opacity-70 sm:ml-6"
             aria-label={`${siteConfig.name} home`}
           >
             <Image
@@ -84,7 +84,7 @@ export function Navbar() {
               alt={siteConfig.name}
               fill
               priority
-              sizes="110px"
+              sizes="150px"
               className="object-contain object-left"
             />
           </Link>
