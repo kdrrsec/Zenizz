@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { navigation, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
@@ -12,14 +12,7 @@ import { easeOutExpo } from "@/lib/motion";
 
 export function Navbar() {
   const pathname = usePathname();
-  const { scrollY } = useScroll();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const isHome = pathname === "/";
-
-  useMotionValueEvent(scrollY, "change", (value) => {
-    setScrolled(value > 16);
-  });
 
   useEffect(() => {
     setOpen(false);
@@ -31,8 +24,6 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  const solid = scrolled || !isHome || open;
 
   return (
     <>
@@ -57,14 +48,7 @@ export function Navbar() {
         </div>
       </div>
 
-      <header
-        className={cn(
-          "fixed inset-x-0 top-[var(--announce-height)] z-50 text-ink transition-[background,border-color,backdrop-filter] duration-400",
-          solid
-            ? "border-b border-line bg-paper/95 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent",
-        )}
-      >
+      <header className="fixed inset-x-0 top-[var(--announce-height)] z-50 border-b border-line bg-paper/95 text-ink backdrop-blur-md">
         <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-4">
           <button
             type="button"
