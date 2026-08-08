@@ -77,16 +77,9 @@ export function Hero() {
               Istanbul&apos;s finest cut.
             </motion.h1>
 
-            <motion.p
-              variants={heroFade}
-              className="mt-3 text-sm font-normal normal-case tracking-wide text-white/70 sm:text-base"
-            >
-              Premium barbering, crafted in Istanbul.
-            </motion.p>
-
             <motion.div
               variants={heroFade}
-              className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center"
+              className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center"
             >
               <Button href="#book" variant="primary" className="w-full sm:w-auto" showArrow>
                 Book Appointment
