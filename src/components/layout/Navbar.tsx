@@ -58,10 +58,10 @@ export function Navbar() {
 
       <header
         className={cn(
-          "fixed inset-x-0 top-[var(--announce-height)] z-50 transition-[background,border-color,color,backdrop-filter] duration-400",
+          "fixed inset-x-0 top-[var(--announce-height)] z-50 text-ink transition-[background,border-color,backdrop-filter] duration-400",
           solid
-            ? "border-b border-line bg-paper/95 text-ink backdrop-blur-md"
-            : "border-b border-transparent bg-transparent text-paper",
+            ? "border-b border-line bg-paper/95 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent",
         )}
       >
         <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-4">
@@ -76,15 +76,13 @@ export function Navbar() {
             <div className="flex w-5 flex-col gap-1.5">
               <span
                 className={cn(
-                  "block h-px w-full transition-transform duration-300",
-                  solid || open ? "bg-ink" : "bg-paper",
+                  "block h-px w-full bg-ink transition-transform duration-300",
                   open && "translate-y-[3.5px] rotate-45",
                 )}
               />
               <span
                 className={cn(
-                  "block h-px w-full transition-transform duration-300",
-                  solid || open ? "bg-ink" : "bg-paper",
+                  "block h-px w-full bg-ink transition-transform duration-300",
                   open && "-translate-y-[3.5px] -rotate-45",
                 )}
               />
@@ -107,8 +105,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "font-mono text-[0.7rem] tracking-[0.08em] uppercase transition-opacity hover:opacity-55",
-                    solid ? "text-ink" : "text-paper/85",
+                    "font-mono text-[0.7rem] tracking-[0.08em] text-ink uppercase transition-opacity hover:opacity-55",
                     active && "opacity-100 underline underline-offset-4",
                   )}
                 >
@@ -119,12 +116,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden sm:block">
-            <Button
-              href="#book"
-              variant={solid ? "soft" : "inverse"}
-              size="sm"
-              ariaLabel="Book appointment"
-            >
+            <Button href="#book" variant="soft" size="sm" ariaLabel="Book appointment">
               Book Appointment
             </Button>
           </div>

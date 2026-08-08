@@ -44,7 +44,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-paper"
+      className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink text-paper"
       aria-label="Hero"
     >
       <motion.div style={{ y }} className="absolute inset-0">
@@ -58,19 +58,21 @@ export function Hero() {
         />
         {/* Soft left wash only — keeps the image breathing on the right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
+        {/* Bottom wash so the headline stays legible where it now sits */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       </motion.div>
 
-      <div className="relative z-10 w-full px-0 py-28 md:py-32">
+      <div className="relative z-10 w-full px-0 pt-[calc(var(--announce-height)+var(--nav-height)+2.5rem)] pb-16 sm:pb-20 md:pb-24">
         <div className="container-wide">
           <motion.div
             variants={heroContainer}
             initial={reduce ? false : "hidden"}
             animate="visible"
-            className="w-full max-w-[min(100%,28rem)] sm:max-w-[min(100%,40rem)] md:max-w-[80%] lg:max-w-[70rem]"
+            className="w-full max-w-[min(100%,26rem)] sm:max-w-[min(100%,34rem)] md:max-w-[45rem] lg:max-w-[52rem]"
           >
             <motion.h1
               variants={heroFade}
-              className="display whitespace-nowrap text-[clamp(2.75rem,6vw,5.5rem)] !font-black !leading-[0.95] !tracking-tight max-[480px]:whitespace-normal"
+              className="display whitespace-nowrap text-[clamp(1.9rem,4.4vw,3.75rem)] !font-black !leading-[0.98] !tracking-tight max-[480px]:whitespace-normal"
             >
               Istanbul&apos;s finest cut.
             </motion.h1>
