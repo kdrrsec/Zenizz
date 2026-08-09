@@ -42,7 +42,7 @@ export default function ServicesPage() {
                 const items = services.filter((s) => s.category === category.id);
                 if (!items.length) return null;
                 return (
-                  <div key={category.id}>
+                  <div key={category.id} id={category.id} className="scroll-mt-[calc(var(--announce-height)+var(--nav-height)+1.5rem)]">
                     <Reveal>
                       <p className="eyebrow mb-6">{category.label}</p>
                     </Reveal>

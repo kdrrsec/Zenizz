@@ -3,17 +3,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
-
-const serviceTypes = [
-  { label: "Fade", href: "/services" },
-  { label: "Scissor cut", href: "/services" },
-  { label: "Beard sculpt", href: "/services" },
-  { label: "Hot towel shave", href: "/services" },
-  { label: "Full ritual", href: "/services" },
-  { label: "Junior cut", href: "/services" },
-  { label: "Texture work", href: "/services" },
-  { label: "Classic clean", href: "/services" },
-];
+import { serviceCategories } from "@/data/services";
 
 export function ServiceQuiz() {
   return (
@@ -30,13 +20,13 @@ export function ServiceQuiz() {
         </Reveal>
 
         <Stagger className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceTypes.map((item) => (
-            <StaggerItem key={item.label}>
+          {serviceCategories.map((category) => (
+            <StaggerItem key={category.id}>
               <Link
-                href={item.href}
+                href={`/services#${category.id}`}
                 className="group flex min-h-[120px] items-end border border-black/10 bg-paper p-5 transition-all duration-400 hover:border-ink hover:bg-ink hover:text-paper"
               >
-                <span className="display text-2xl md:text-3xl">{item.label}</span>
+                <span className="display text-2xl md:text-3xl">{category.label}</span>
               </Link>
             </StaggerItem>
           ))}
