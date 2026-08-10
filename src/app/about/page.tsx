@@ -3,7 +3,7 @@ import { images } from "@/data/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ImageReveal } from "@/components/ui/ImageReveal";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { BookingWidget } from "@/components/booking/BookingWidget";
 
@@ -15,21 +15,6 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
 };
-
-const pillars = [
-  {
-    title: "Craft",
-    text: "Elke knipbeurt begint met kijken. Vorm, textuur en balans bepalen het traject — niet de trend van de week.",
-  },
-  {
-    title: "Presence",
-    text: "We maken ruimte. Geen haast, geen ruis. Alleen focus op het moment in de stoel.",
-  },
-  {
-    title: "Precision",
-    text: "Strakke lijnen, zachte overgangen, scherpe afwerking. Details die je voelt, ook dagen later.",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -73,25 +58,6 @@ export default function AboutPage() {
               />
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="border-y border-line bg-paper-elevated py-20 md:py-28">
-        <Container wide>
-          <Reveal>
-            <p className="eyebrow mb-5">Philosophy</p>
-            <h2 className="display max-w-3xl text-4xl md:text-6xl text-balance">
-              Laat je verschijning spreken voor je iets zegt.
-            </h2>
-          </Reveal>
-          <Stagger className="mt-16 grid gap-10 md:grid-cols-3">
-            {pillars.map((item) => (
-              <StaggerItem key={item.title} className="border-t border-line pt-8">
-                <h3 className="display text-3xl">{item.title}</h3>
-                <p className="mt-4 text-muted leading-relaxed">{item.text}</p>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </Container>
       </section>
 

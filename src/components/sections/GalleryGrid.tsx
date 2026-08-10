@@ -9,10 +9,8 @@ import { cn } from "@/lib/utils";
 
 const filters = [
   { id: "all", label: "All" },
-  { id: "interior", label: "Interior" },
   { id: "cuts", label: "Cuts" },
   { id: "details", label: "Details" },
-  { id: "atmosphere", label: "Atmosphere" },
 ] as const;
 
 export function GalleryGrid() {
@@ -47,21 +45,13 @@ export function GalleryGrid() {
 
       <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" key={filter}>
         {items.map((item) => (
-          <StaggerItem
-            key={item.id}
-            className={cn(
-              "group relative overflow-hidden bg-line",
-              item.span === "tall" ? "aspect-[3/4]" : "aspect-[4/5]",
-              item.span === "wide" && "sm:col-span-2 sm:aspect-[16/10]",
-            )}
-          >
+          <StaggerItem key={item.id} className="group relative aspect-[3/4] overflow-hidden bg-soft">
             <Image
               src={item.src}
               alt={item.alt}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              style={{ objectPosition: item.focus }}
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              className="object-contain transition-transform duration-700 group-hover:scale-[1.04]"
             />
           </StaggerItem>
         ))}

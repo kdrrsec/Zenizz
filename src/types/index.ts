@@ -26,9 +26,6 @@ export type GalleryItem = {
   src: string;
   alt: string;
   category: "interior" | "cuts" | "details" | "atmosphere";
-  span?: "tall" | "wide" | "normal";
-  /** CSS object-position, for source photos where a plain center-crop cuts off the subject. */
-  focus?: string;
 };
 
 export type Review = {
