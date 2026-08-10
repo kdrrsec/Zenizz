@@ -1,15 +1,18 @@
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { gallery } from "@/data/gallery";
 import { Container } from "@/components/ui/Container";
 import { Stagger, StaggerItem } from "@/components/ui/Reveal";
-import Image from "next/image";
 
 export function GalleryGrid() {
+  const t = useTranslations("gallery");
+
   if (gallery.length === 0) {
     return (
       <Container wide>
         <div className="border border-dashed border-line py-24 text-center">
-          <p className="eyebrow mb-3">Binnenkort</p>
-          <p className="text-muted">Nieuwe foto&apos;s volgen snel.</p>
+          <p className="eyebrow mb-3">{t("comingSoonEyebrow")}</p>
+          <p className="text-muted">{t("comingSoon")}</p>
         </div>
       </Container>
     );

@@ -1,0 +1,282 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookAppointment": "Book Appointment",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile menu"
+  },
+  "marquee": {
+    "name": "Zenizz Barbershop",
+    "tagline": "Istanbul's finest cut",
+    "since": "Est. 2026",
+    "bookChair": "Book your chair",
+    "premium": "Premium barber experience",
+    "fades": "Skin fades",
+    "beard": "Beard sculpt"
+  },
+  "hero": {
+    "headline": "Istanbul's finest cut.",
+    "bookAppointment": "Book Appointment",
+    "viewServices": "View Services",
+    "heroAlt": "Close-up of a precise haircut with soft shallow depth of field"
+  },
+  "servicesPreview": {
+    "eyebrow": "Best of the chair",
+    "title": "Signature services",
+    "description": "Know what you need?",
+    "bookIt": "Book it.",
+    "notSure": "Not sure? Explore the menu below.",
+    "viewAll": "View all services",
+    "bookAria": "Book {name}"
+  },
+  "serviceQuiz": {
+    "eyebrow": "Service guide",
+    "title": "What do you need?",
+    "description": "Pick a direction. We'll take it from there, consult included.",
+    "lookbook": "Lifestyle lookbook",
+    "story": "Our story",
+    "team": "Meet the team"
+  },
+  "serviceCategories": {
+    "cut": "Cuts",
+    "beard": "Beard",
+    "ritual": "Rituals",
+    "combo": "Combos"
+  },
+  "aboutPreview": {
+    "eyebrow": "Our story",
+    "quote": "Let the cut speak first.",
+    "description": "Years of craft behind every chair, refined into a quieter, sharper barbershop experience.",
+    "pillars": [
+      "Created by professional barbers",
+      "Built around presence, not speed",
+      "Precision cuts for short and medium lengths"
+    ],
+    "readStory": "Read our story",
+    "aboutAlt": "Yusuf at work in the ZENIZZ atelier",
+    "aboutSecondaryAlt": "Yusuf with a happy client"
+  },
+  "teamPreview": {
+    "eyebrow": "Team",
+    "title": "The hands behind the craft",
+    "meetTeam": "Meet the team"
+  },
+  "gallery": {
+    "eyebrow": "Lookbook",
+    "title": "Lifestyle gallery",
+    "viewGallery": "View gallery",
+    "comingSoonEyebrow": "Coming soon",
+    "comingSoon": "New photos are on their way.",
+    "filters": {
+      "all": "All",
+      "cuts": "Cuts",
+      "details": "Details"
+    }
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "title": "What clients say",
+    "googleReviewsCount": "147 Google reviews",
+    "srRating": "Rated {rating} out of 5",
+    "goToReview": "Show review from {name}"
+  },
+  "bookingCta": {
+    "eyebrow": "Ready when you are",
+    "title": "Book your chair.",
+    "description": "Choose a time. We handle the rest: calm, precision, and a cut that speaks for itself.",
+    "bookAppointment": "Book Appointment",
+    "contact": "Contact"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked",
+    "items": [
+      {
+        "q": "How early should I arrive?",
+        "a": "Five minutes is ideal. Walk-ins are welcome when a chair is free, but appointments always take priority."
+      },
+      {
+        "q": "Which service is right for me?",
+        "a": "Start with the Signature Cut for most short to medium styles. Prefer a sharper fade? Book the Precision Fade. Want the full reset? Choose the ZENIZZ Ritual."
+      },
+      {
+        "q": "Do you work on all hair types?",
+        "a": "Yes: straight, wavy, curly, coarse, fine, and textured. We specialize in short and medium lengths."
+      },
+      {
+        "q": "What is your cancellation policy?",
+        "a": "Please cancel at least 5 hours ahead. Arrivals more than 10 minutes late may need to reschedule."
+      }
+    ]
+  },
+  "contactPreview": {
+    "eyebrow": "Contact",
+    "title": "Visit the atelier",
+    "description": "In the heart of Beşiktaş, Istanbul. Come in, take a seat, and let the craft do the talking.",
+    "address": "Address",
+    "hours": "Hours",
+    "reachUs": "Reach us",
+    "mapTitle": "ZENIZZ on Google Maps"
+  },
+  "footer": {
+    "newsletter": "Join us. Be first to know about openings, seasonal rituals, and atelier news.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "signUp": "Sign up",
+    "navigate": "Navigate",
+    "visit": "Visit",
+    "follow": "Follow",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed"
+  },
+  "booking": {
+    "reservations": "Reservations",
+    "defaultTitle": "Book Appointment",
+    "defaultDescription": "Pick your barber, service, and time. The external booking system connects seamlessly here.",
+    "integrationReady": "Integration ready",
+    "integrationText": "Swap this placeholder for AxaBook or another provider through the BookingWidget props: provider, embedUrl, scriptSrc and widgetId.",
+    "requestAppointment": "Request Appointment",
+    "callStudio": "Call Studio",
+    "subject": "Appointment request"
+  },
+  "pages": {
+    "home": {
+      "title": "Premium Barbershop Istanbul"
+    },
+    "about": {
+      "title": "About",
+      "metaDescription": "Discover the story behind ZENIZZ, a premium barbershop in Istanbul built around craft, presence, and precision.",
+      "eyebrow": "About",
+      "heroTitle": "An atelier for those who take the craft seriously.",
+      "heroDescription": "ZENIZZ started with a simple question: what if a barbershop felt like the quiet between work and home? Warm, editorial, and masterfully executed.",
+      "paragraph1": "We specialize in short to medium lengths: fades, scissor work, beard sculpting, and classic rituals. Not because it's trendy, but because that's where our craft is sharpest.",
+      "paragraph2": "The interior, the light, the tools, the pace: everything is chosen to create presence. At ZENIZZ, you're not just handled. You're seen.",
+      "bookAppointment": "Book Appointment",
+      "aboutAlt": "Yusuf at work in the ZENIZZ atelier",
+      "aboutSecondaryAlt": "Yusuf with a happy client",
+      "bookingTitle": "Experience ZENIZZ",
+      "bookingDescription": "Book a consult or a signature ritual. The booking system is ready for AxaBook integration."
+    },
+    "services": {
+      "title": "Services",
+      "metaDescription": "Browse every ZENIZZ service: signature cuts, fades, beard sculpting, hot towel shaves, and complete grooming rituals.",
+      "eyebrow": "Services",
+      "heroTitle": "Menus built with intention.",
+      "heroDescription": "Clear pricing, honest timing, and always room for a personal consult.",
+      "imageAlt": "Fresh precision haircut detail",
+      "bookAppointment": "Book Appointment"
+    },
+    "team": {
+      "title": "Team",
+      "metaDescription": "Meet the ZENIZZ team: master barbers and specialists in fades, scissor work, texture, and classic rituals.",
+      "eyebrow": "Team",
+      "heroTitle": "The hands behind the craft.",
+      "heroDescription": "Every barber brings their own signature. Together they set the ZENIZZ standard.",
+      "bookingTitle": "Choose your barber",
+      "bookingDescription": "Book directly with your favorite specialist once AxaBook is connected. Until then, you can request an appointment."
+    },
+    "gallery": {
+      "title": "Gallery",
+      "metaDescription": "Explore the ZENIZZ gallery: cuts, details, and atmosphere from our Istanbul barbershop.",
+      "eyebrow": "Gallery",
+      "heroTitle": "Images from the atelier.",
+      "heroDescription": "A selection of craft and detail, for inspiration, not a catalog."
+    },
+    "contact": {
+      "title": "Contact",
+      "metaDescription": "Visit ZENIZZ in Beşiktaş, Istanbul or book an appointment. View opening hours and contact details.",
+      "eyebrow": "Contact",
+      "heroTitle": "Come by. Or plan ahead.",
+      "heroDescription": "We'd love to welcome you to the atelier. For questions or bookings: call, email, or use the booking block below.",
+      "studio": "Studio",
+      "studioName": "ZENIZZ Istanbul",
+      "contactLabel": "Contact",
+      "openingHours": "Opening hours",
+      "call": "Call",
+      "mapTitle": "ZENIZZ on Google Maps"
+    }
+  },
+  "services": {
+    "signature-cut": {
+      "name": "Signature Cut",
+      "description": "A tailored haircut with fade or scissor work, finished with a hot towel and neck shave."
+    },
+    "precision-fade": {
+      "name": "Precision Fade",
+      "description": "Sharp fades with close attention to texture, shape, and balance, from skin fade to soft taper."
+    },
+    "scissor-cut": {
+      "name": "Scissor Cut",
+      "description": "Full scissor work for medium lengths. Soft layers, movement, and a natural flow."
+    },
+    "beard-sculpt": {
+      "name": "Beard Sculpt",
+      "description": "Beard shaping with trimmer and razor, including a hot towel and nourishing aftercare."
+    },
+    "hot-towel-shave": {
+      "name": "Hot Towel Shave",
+      "description": "A classic straight razor shave with warm towels, rich lather, and a cold towel finish."
+    },
+    "cut-beard": {
+      "name": "Cut and Beard",
+      "description": "Our signature haircut paired with beard sculpting: the complete grooming ritual."
+    },
+    "zenizz-ritual": {
+      "name": "ZENIZZ Ritual",
+      "description": "Our signature journey: consult, cut, beard or shave, scalp massage, and a styled finish."
+    },
+    "junior-cut": {
+      "name": "Junior Cut",
+      "description": "For boys up to 12. Patient, precise, and at an easy pace."
+    }
+  },
+  "team": {
+    "yusuf": {
+      "role": "Founder and Master Barber",
+      "bio": "Yusuf built ZENIZZ on the belief that a haircut is more than technique. It's presence, calm, and craftsmanship.",
+      "specialties": ["Fades", "Scissor work", "Consults"]
+    }
+  },
+  "reviewItems": {
+    "r1": {
+      "text": "I'm visiting from the Netherlands, and this is what I'd call a proper European barber!",
+      "date": "3 weeks ago"
+    },
+    "r2": {
+      "text": "Zenizz's team are the real deal. Highly recommended!",
+      "date": "2 weeks ago"
+    },
+    "r3": {
+      "text": "A top barber. Full satisfaction, a real recommendation. They genuinely listen to what the client wants, and there was an excellent consultation before the cut.",
+      "date": "4 months ago"
+    },
+    "r4": {
+      "text": "I'm so glad I found this place. It's a fantastic barbershop, and I plan on getting my hair cut here for years to come.",
+      "date": "1 month ago"
+    },
+    "r5": {
+      "text": "Very friendly service and a perfect haircut. The barber works cleanly, takes his time, and pays attention to every detail. A real recommendation, the best in Istanbul!",
+      "date": "1 month ago"
+    },
+    "r6": {
+      "text": "Very helpful, and a great haircut.",
+      "date": "6 months ago"
+    }
+  }
+}

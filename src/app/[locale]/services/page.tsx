@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { services, serviceCategories } from "@/data/services";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -8,23 +9,32 @@ import { BookingWidget } from "@/components/booking/BookingWidget";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { images } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Bekijk alle ZENIZZ services: signature cuts, fades, beard sculpting, hot towel shaves en complete grooming rituals.",
-  alternates: {
-    canonical: "/services",
-  },
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function ServicesPage() {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.services" });
+
+  return {
+    title: t("title"),
+    description: t("metaDescription"),
+    alternates: {
+      canonical: "/services",
+      languages: { en: "/services", tr: "/tr/services" },
+    },
+  };
+}
+
+export default async function ServicesPage({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("pages.services");
+  const tServices = await getTranslations("services");
+  const tCategories = await getTranslations("serviceCategories");
+
   return (
     <>
-      <PageHero
-        eyebrow="Services"
-        title="Trajecten met aandacht."
-        description="Heldere menu’s, eerlijke tijden, en altijd ruimte voor een persoonlijk consult."
-      />
+      <PageHero eyebrow={t("eyebrow")} title={t("heroTitle")} description={t("heroDescription")} />
 
       <section className="py-16 md:py-24">
         <Container wide>
@@ -32,7 +42,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-4">
               <ImageReveal
                 src={images.services}
-                alt="Fresh precision haircut detail"
+                alt={t("imageAlt")}
                 className="aspect-[4/5] sticky top-28"
                 parallax
               />
@@ -44,7 +54,7 @@ export default function ServicesPage() {
                 return (
                   <div key={category.id} id={category.id} className="scroll-mt-[calc(var(--announce-height)+var(--nav-height)+1.5rem)]">
                     <Reveal>
-                      <p className="eyebrow mb-6">{category.label}</p>
+                      <p className="eyebrow mb-6">{tCategories(category.id)}</p>
                     </Reveal>
                     <Stagger className="divide-y divide-line border-y border-line">
                       {items.map((service) => (
@@ -53,10 +63,10 @@ export default function ServicesPage() {
                           className="grid gap-4 py-7 md:grid-cols-12 md:items-center"
                         >
                           <div className="md:col-span-4">
-                            <h2 className="display text-3xl">{service.name}</h2>
+                            <h2 className="display text-3xl">{tServices(`${service.id}.name`)}</h2>
                           </div>
                           <p className="md:col-span-5 text-muted leading-relaxed">
-                            {service.description}
+                            {tServices(`${service.id}.description`)}
                           </p>
                           <div className="md:col-span-3 md:text-right">
                             <p className="font-mono text-sm tracking-[0.12em] uppercase">
@@ -71,7 +81,7 @@ export default function ServicesPage() {
                 );
               })}
               <Reveal>
-                <Button href="#book">Book Appointment</Button>
+                <Button href="#book">{t("bookAppointment")}</Button>
               </Reveal>
             </div>
           </div>

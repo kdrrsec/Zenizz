@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 /**
- * BookingWidget — integration-ready placeholder for an external booking system.
+ * BookingWidget: integration-ready placeholder for an external booking system.
  *
  * To connect AxaBook or another provider later:
  * 1. Set `provider` to "axabook" (or your provider id)
@@ -45,10 +46,13 @@ export function BookingWidget({
   scriptSrc,
   widgetId,
   className,
-  title = "Book Appointment",
-  description = "Kies je barber, service en tijdstip. Het externe boekingssysteem kan hier naadloos worden geïntegreerd.",
+  title,
+  description,
   onReady,
 }: BookingWidgetProps) {
+  const t = useTranslations("booking");
+  const resolvedTitle = title ?? t("defaultTitle");
+  const resolvedDescription = description ?? t("defaultDescription");
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -106,16 +110,16 @@ export function BookingWidget({
       className={cn("scroll-mt-28", className)}
     >
       <div className="border border-line bg-soft p-8 md:p-12">
-        <p className="eyebrow mb-4">Reservations</p>
+        <p className="eyebrow mb-4">{t("reservations")}</p>
         <h2 id="booking-title" className="display text-3xl md:text-5xl">
-          {title}
+          {resolvedTitle}
         </h2>
-        <p className="mt-4 max-w-2xl text-faded leading-relaxed">{description}</p>
+        <p className="mt-4 max-w-2xl text-faded leading-relaxed">{resolvedDescription}</p>
 
         {showEmbed ? (
           <div className="mt-8 overflow-hidden border border-line bg-paper">
             <iframe
-              title="Booking system"
+              title={t("defaultTitle")}
               src={embedUrl}
               className="h-[640px] w-full"
               loading="lazy"
@@ -139,27 +143,20 @@ export function BookingWidget({
             <div className="space-y-3 text-sm text-faded leading-relaxed">
               <p>
                 <span className="font-mono uppercase tracking-[0.14em] text-ink">
-                  Integration ready
+                  {t("integrationReady")}
                 </span>
               </p>
-              <p>
-                Vervang deze placeholder door AxaBook of een andere provider via
-                de <code className="font-mono text-ink">BookingWidget</code> props:
-                <span className="font-mono text-ink"> provider</span>,{" "}
-                <span className="font-mono text-ink">embedUrl</span>,{" "}
-                <span className="font-mono text-ink">scriptSrc</span> en{" "}
-                <span className="font-mono text-ink">widgetId</span>.
-              </p>
+              <p>{t("integrationText")}</p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
               <Button
-                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Appointment request")}`}
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(t("subject"))}`}
                 variant="primary"
               >
-                Request Appointment
+                {t("requestAppointment")}
               </Button>
               <Button href={siteConfig.phoneHref} variant="secondary">
-                Call Studio
+                {t("callStudio")}
               </Button>
             </div>
           </div>

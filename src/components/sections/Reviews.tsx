@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { reviews } from "@/data/reviews";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -33,9 +34,9 @@ function GoogleLogo({ className }: { className?: string }) {
   );
 }
 
-function Stars({ rating, className }: { rating: number; className?: string }) {
+function Stars({ rating, className, label }: { rating: number; className?: string; label: string }) {
   return (
-    <div className={className ?? "flex gap-0.5"} aria-label={`Beoordeeld als ${rating} van 5`}>
+    <div className={className ?? "flex gap-0.5"} aria-label={label}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
@@ -51,6 +52,8 @@ function Stars({ rating, className }: { rating: number; className?: string }) {
 }
 
 export function Reviews() {
+  const t = useTranslations("reviews");
+  const tReviewText = useTranslations("reviewItems");
   const [index, setIndex] = useState(0);
   const reduce = useReducedMotion();
 
@@ -69,9 +72,9 @@ export function Reviews() {
       <Container wide>
         <Reveal className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="eyebrow mb-3">Reviews</p>
+            <p className="eyebrow mb-3">{t("eyebrow")}</p>
             <h2 id="reviews-title" className="display text-4xl md:text-6xl">
-              What clients say
+              {t("title")}
             </h2>
           </div>
 
@@ -84,11 +87,11 @@ export function Reviews() {
             <GoogleLogo className="h-7 w-7 shrink-0" />
             <span className="flex flex-col gap-1">
               <span className="flex items-center gap-2">
-                <span className="font-mono text-sm font-semibold text-ink">5,0</span>
-                <Stars rating={5} />
+                <span className="font-mono text-sm font-semibold text-ink">5.0</span>
+                <Stars rating={5} label={t("srRating", { rating: 5 })} />
               </span>
               <span className="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-faded underline-anim">
-                147 Google reviews
+                {t("googleReviewsCount")}
               </span>
             </span>
           </a>
@@ -103,15 +106,15 @@ export function Reviews() {
               exit={reduce ? undefined : { opacity: 0, y: -18 }}
               transition={{ duration: 0.65, ease: easeOutExpo }}
             >
-              <Stars rating={review.rating} className="flex gap-1" />
+              <Stars rating={review.rating} className="flex gap-1" label={t("srRating", { rating: review.rating })} />
 
               <blockquote className="display mt-6 min-h-[6rem] text-2xl !normal-case !tracking-[-0.02em] !leading-snug md:text-4xl">
-                “{review.text}”
+                &ldquo;{tReviewText(`${review.id}.text`)}&rdquo;
               </blockquote>
 
               <div className="mt-8 flex items-center justify-between gap-4">
                 <p className="font-mono text-[0.7rem] tracking-[0.1em] uppercase text-faded">
-                  {review.name} · {review.date}
+                  {review.name} · {tReviewText(`${review.id}.date`)}
                 </p>
                 <GoogleLogo className="h-5 w-5 shrink-0 opacity-70" />
               </div>
@@ -124,7 +127,7 @@ export function Reviews() {
                 key={r.id}
                 type="button"
                 onClick={() => setIndex(i)}
-                aria-label={`Toon review van ${r.name}`}
+                aria-label={t("goToReview", { name: r.name })}
                 aria-current={i === index}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   i === index ? "w-8 bg-ink" : "w-1.5 bg-line hover:bg-stone"

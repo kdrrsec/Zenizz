@@ -9,6 +9,7 @@ import {
   type Variants,
 } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { images } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { easeOutExpo } from "@/lib/motion";
@@ -33,6 +34,7 @@ const heroFade: Variants = {
 };
 
 export function Hero() {
+  const t = useTranslations("hero");
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -50,13 +52,13 @@ export function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={images.hero}
-          alt="Close-up of a precise haircut with soft shallow depth of field"
+          alt={t("heroAlt")}
           fill
           priority
           sizes="100vw"
           className="object-cover object-[65%_30%] md:object-[center_30%]"
         />
-        {/* Soft left wash only — keeps the image breathing on the right */}
+        {/* Soft left wash only: keeps the image breathing on the right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
         {/* Bottom wash so the headline stays legible where it now sits */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -74,7 +76,7 @@ export function Hero() {
               variants={heroFade}
               className="display whitespace-nowrap text-[clamp(1.9rem,4.4vw,3.75rem)] !font-black !leading-[0.98] !tracking-tight max-[480px]:whitespace-normal"
             >
-              Istanbul&apos;s finest cut.
+              {t("headline")}
             </motion.h1>
 
             <motion.div
@@ -82,7 +84,7 @@ export function Hero() {
               className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center"
             >
               <Button href="#book" variant="primary" className="w-full sm:w-auto" showArrow>
-                Book Appointment
+                {t("bookAppointment")}
               </Button>
               <Button
                 href="/services"
@@ -90,7 +92,7 @@ export function Hero() {
                 className="w-full sm:w-auto"
                 showArrow={false}
               >
-                View Services
+                {t("viewServices")}
               </Button>
             </motion.div>
           </motion.div>

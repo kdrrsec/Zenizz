@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
 import { ServiceQuiz } from "@/components/sections/ServiceQuiz";
@@ -16,7 +17,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <Hero />

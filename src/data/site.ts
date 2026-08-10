@@ -1,10 +1,7 @@
-import type { NavItem, SiteConfig } from "@/types";
+import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "ZENIZZ",
-  tagline: "We take this craft very seriously.",
-  description:
-    "ZENIZZ is a premium barbershop in Istanbul. Precision cuts, calm rituals, and a chair experience built around craft — not speed.",
   url: "https://zenizz.com",
   email: "hello@zenizz.com",
   phone: "+90 212 123 4567",
@@ -20,23 +17,23 @@ export const siteConfig: SiteConfig = {
     facebook: "https://facebook.com",
   },
   openingHours: [
-    { day: "Monday", hours: "Closed" },
-    { day: "Tuesday", hours: "10:00 – 19:00" },
-    { day: "Wednesday", hours: "10:00 – 19:00" },
-    { day: "Thursday", hours: "10:00 – 20:00" },
-    { day: "Friday", hours: "10:00 – 20:00" },
-    { day: "Saturday", hours: "09:00 – 17:00" },
-    { day: "Sunday", hours: "Closed" },
+    { day: "monday", hours: null },
+    { day: "tuesday", hours: "10:00–19:00" },
+    { day: "wednesday", hours: "10:00–19:00" },
+    { day: "thursday", hours: "10:00–20:00" },
+    { day: "friday", hours: "10:00–20:00" },
+    { day: "saturday", hours: "09:00–17:00" },
+    { day: "sunday", hours: null },
   ],
 };
 
-export const navigation: NavItem[] = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Team", href: "/team" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
-];
+export const navigation = [
+  { key: "about", href: "/about" },
+  { key: "services", href: "/services" },
+  { key: "team", href: "/team" },
+  { key: "gallery", href: "/gallery" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 export const images = {
   hero: "/Zenizz.png",

@@ -56,8 +56,6 @@ export function VideoGallery() {
     return () => clearInterval(timer);
   }, [reduce, paused]);
 
-  const clip = clips[index];
-
   return (
     <section className="border-y border-line bg-soft py-20 md:py-28" aria-labelledby="video-gallery-title">
       <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
@@ -70,7 +68,7 @@ export function VideoGallery() {
             </h2>
           </div>
           <p className="max-w-md text-faded leading-relaxed">
-            Echte clips van de zaak — geluid staat uit tot je zelf op play drukt.
+            Echte clips van de zaak. Geluid staat uit tot je zelf op play drukt.
           </p>
         </Reveal>
 

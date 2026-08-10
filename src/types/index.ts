@@ -1,26 +1,3 @@
-export type NavItem = {
-  label: string;
-  href: string;
-};
-
-export type Service = {
-  id: string;
-  name: string;
-  description: string;
-  duration: string;
-  price: string;
-  category: "cut" | "beard" | "ritual" | "combo";
-};
-
-export type TeamMember = {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-  specialties: string[];
-};
-
 export type GalleryItem = {
   id: string;
   src: string;
@@ -28,23 +5,13 @@ export type GalleryItem = {
   category: "interior" | "cuts" | "details" | "atmosphere";
 };
 
-export type Review = {
-  id: string;
-  name: string;
-  text: string;
-  rating: number;
-  date: string;
-};
-
 export type OpeningHours = {
-  day: string;
-  hours: string;
+  day: "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday";
+  hours: string | null;
 };
 
 export type SiteConfig = {
   name: string;
-  tagline: string;
-  description: string;
   url: string;
   email: string;
   phone: string;

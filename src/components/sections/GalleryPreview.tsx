@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { gallery } from "@/data/gallery";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 export function GalleryPreview() {
+  const t = useTranslations("gallery");
   const items = gallery.slice(0, 6);
 
   if (items.length === 0) return null;
@@ -16,14 +18,14 @@ export function GalleryPreview() {
       <Container wide>
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
-            <p className="eyebrow mb-3">Lookbook</p>
+            <p className="eyebrow mb-3">{t("eyebrow")}</p>
             <h2 id="gallery-preview-title" className="display text-4xl md:text-6xl">
-              Lifestyle gallery
+              {t("title")}
             </h2>
           </Reveal>
           <Reveal>
             <Button href="/gallery" variant="soft">
-              View gallery
+              {t("viewGallery")}
             </Button>
           </Reveal>
         </div>

@@ -2,45 +2,31 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
 
-const faqs = [
-  {
-    q: "How early should I arrive?",
-    a: "Five minutes is ideal. Walk-ins are welcome when the chair is free, but appointments always take priority.",
-  },
-  {
-    q: "Which service is right for me?",
-    a: "Start with Signature Cut for most short-to-medium styles. Prefer a sharper fade? Book Precision Fade. Want the full reset? Choose the ZENIZZ Ritual.",
-  },
-  {
-    q: "Do you work on all hair types?",
-    a: "Yes — straight, wavy, curly, coarse, fine, and textured. We specialize in short and medium lengths.",
-  },
-  {
-    q: "What is your cancellation policy?",
-    a: "Please cancel at least 5 hours ahead. Late arrivals over 10 minutes may need to reschedule.",
-  },
-];
+type FaqItem = { q: string; a: string };
 
 export function FAQ() {
+  const t = useTranslations("faq");
+  const items = t.raw("items") as FaqItem[];
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section className="border-t border-line bg-paper py-20 md:py-28" aria-labelledby="faq-title">
       <Container>
         <Reveal className="mb-12">
-          <p className="eyebrow mb-4">FAQ</p>
+          <p className="eyebrow mb-4">{t("eyebrow")}</p>
           <h2 id="faq-title" className="display text-4xl md:text-6xl">
-            Frequently asked
+            {t("title")}
           </h2>
         </Reveal>
 
         <div className="divide-y divide-line border-y border-line">
-          {faqs.map((item, index) => {
+          {items.map((item, index) => {
             const isOpen = open === index;
             return (
               <div key={item.q}>

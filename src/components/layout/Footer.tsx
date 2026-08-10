@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { navigation, siteConfig } from "@/data/site";
 import { formatAddress } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
 export function Footer() {
+  const t = useTranslations();
   const year = new Date().getFullYear();
 
   return (
@@ -15,38 +17,36 @@ export function Footer() {
             <p className="font-mono text-sm font-semibold tracking-[0.14em] uppercase">
               {siteConfig.name}
             </p>
-            <p className="mt-5 max-w-sm text-faded leading-relaxed">
-              Join us. Be first to know about openings, seasonal rituals, and atelier news.
-            </p>
+            <p className="mt-5 max-w-sm text-faded leading-relaxed">{t("footer.newsletter")}</p>
             <form
               className="mt-6 flex max-w-md gap-2"
               action={`mailto:${siteConfig.email}`}
               method="get"
             >
               <label className="sr-only" htmlFor="footer-email">
-                Email
+                {t("footer.emailLabel")}
               </label>
               <input
                 id="footer-email"
                 name="body"
                 type="email"
                 required
-                placeholder="Email"
+                placeholder={t("footer.emailPlaceholder")}
                 className="w-full border border-line bg-soft px-4 py-3 font-mono text-sm outline-none transition-colors focus:border-ink"
               />
               <Button type="submit" variant="primary" size="sm">
-                Sign up
+                {t("footer.signUp")}
               </Button>
             </form>
           </div>
 
           <div className="md:col-span-2">
-            <p className="eyebrow mb-4">Navigate</p>
+            <p className="eyebrow mb-4">{t("footer.navigate")}</p>
             <ul className="space-y-3">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="underline-anim text-sm">
-                    {item.label}
+                    {t(`nav.${item.key}`)}
                   </Link>
                 </li>
               ))}
@@ -54,7 +54,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="eyebrow mb-4">Visit</p>
+            <p className="eyebrow mb-4">{t("footer.visit")}</p>
             <address className="not-italic space-y-2 text-sm text-faded leading-relaxed">
               <p>{siteConfig.address.street}</p>
               <p>
@@ -74,11 +74,11 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="eyebrow mb-4">Follow</p>
+            <p className="eyebrow mb-4">{t("footer.follow")}</p>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="underline-anim">
-                  Instagram
+                  {t("footer.instagram")}
                 </a>
               </li>
               <li>

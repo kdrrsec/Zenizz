@@ -1,18 +1,47 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { navigation, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
 
+function LanguageSwitcher({ className }: { className?: string }) {
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  return (
+    <div className={cn("flex items-center gap-1 font-mono text-[0.65rem] tracking-[0.08em] uppercase", className)}>
+      {routing.locales.map((loc, i) => (
+        <span key={loc} className="flex items-center gap-1">
+          {i > 0 ? <span className="text-faded" aria-hidden>/</span> : null}
+          <button
+            type="button"
+            onClick={() => router.replace(pathname, { locale: loc })}
+            aria-current={locale === loc}
+            className={cn(
+              "px-1 transition-opacity",
+              locale === loc ? "opacity-100 underline underline-offset-4" : "opacity-50 hover:opacity-80",
+            )}
+          >
+            {loc}
+          </button>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const t = useTranslations();
 
   useEffect(() => {
     setOpen(false);
@@ -32,19 +61,19 @@ export function Navbar() {
           <div className="marquee-track eyebrow !text-ink/70">
             {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-8 px-4">
-                <span>Zenizz Barbershop</span>
+                <span>{t("marquee.name")}</span>
                 <span aria-hidden>·</span>
-                <span>Istanbul&apos;s finest cut</span>
+                <span>{t("marquee.tagline")}</span>
                 <span aria-hidden>·</span>
-                <span>Est. 2026</span>
+                <span>{t("marquee.since")}</span>
                 <span aria-hidden>·</span>
-                <span>Book your chair</span>
+                <span>{t("marquee.bookChair")}</span>
                 <span aria-hidden>·</span>
-                <span>Premium barber experience</span>
+                <span>{t("marquee.premium")}</span>
                 <span aria-hidden>·</span>
-                <span>Skin fades</span>
+                <span>{t("marquee.fades")}</span>
                 <span aria-hidden>·</span>
-                <span>Beard sculpt</span>
+                <span>{t("marquee.beard")}</span>
                 <span aria-hidden>·</span>
               </span>
             ))}
@@ -74,7 +103,7 @@ export function Navbar() {
             className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Sluit menu" : "Open menu"}
+            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
             onClick={() => setOpen((v) => !v)}
           >
             <div className="flex w-5 flex-col gap-1.5">
@@ -93,7 +122,7 @@ export function Navbar() {
             </div>
           </button>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Hoofdnavigatie">
+          <nav className="hidden items-center gap-7 lg:flex" aria-label={t("nav.mainNav")}>
             {navigation.map((item) => {
               const active = pathname === item.href;
               return (
@@ -105,15 +134,16 @@ export function Navbar() {
                     active && "opacity-100 underline underline-offset-4",
                   )}
                 >
-                  {item.label}
+                  {t(`nav.${item.key}`)}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="hidden sm:block">
-            <Button href="#book" variant="soft" size="sm" ariaLabel="Book appointment">
-              Book Appointment
+          <div className="hidden items-center gap-5 sm:flex">
+            <LanguageSwitcher />
+            <Button href="#book" variant="soft" size="sm" ariaLabel={t("nav.bookAppointment")}>
+              {t("nav.bookAppointment")}
             </Button>
           </div>
         </div>
@@ -129,7 +159,7 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: easeOutExpo }}
           >
-            <nav className="container-page flex h-full flex-col justify-between py-10" aria-label="Mobiel menu">
+            <nav className="container-page flex h-full flex-col justify-between py-10" aria-label={t("nav.mobileNav")}>
               <ul className="space-y-1">
                 {navigation.map((item, index) => (
                   <motion.li
@@ -143,16 +173,19 @@ export function Navbar() {
                       className="display block py-3 text-4xl"
                       onClick={() => setOpen(false)}
                     >
-                      {item.label}
+                      {t(`nav.${item.key}`)}
                     </Link>
                   </motion.li>
                 ))}
               </ul>
               <div className="space-y-5 pb-10">
                 <Button href="#book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
-                  Book Appointment
+                  {t("nav.bookAppointment")}
                 </Button>
-                <p className="eyebrow">{siteConfig.tagline}</p>
+                <div className="flex items-center justify-between">
+                  <p className="eyebrow">{t("marquee.tagline")}</p>
+                  <LanguageSwitcher />
+                </div>
               </div>
             </nav>
           </motion.div>

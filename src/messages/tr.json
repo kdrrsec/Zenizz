@@ -1,0 +1,282 @@
+{
+  "nav": {
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "team": "Ekip",
+    "gallery": "Galeri",
+    "contact": "İletişim",
+    "bookAppointment": "Randevu Al",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "mainNav": "Ana menü",
+    "mobileNav": "Mobil menü"
+  },
+  "marquee": {
+    "name": "Zenizz Berber",
+    "tagline": "İstanbul'un en iyi kesimi",
+    "since": "2026'dan beri",
+    "bookChair": "Koltuğunu ayırt",
+    "premium": "Premium berber deneyimi",
+    "fades": "Skin fade",
+    "beard": "Sakal şekillendirme"
+  },
+  "hero": {
+    "headline": "İstanbul'un en iyi kesimi.",
+    "bookAppointment": "Randevu Al",
+    "viewServices": "Hizmetleri Gör",
+    "heroAlt": "Hafif derinlik etkisiyle çekilmiş, özenli bir saç kesiminin yakın çekimi"
+  },
+  "servicesPreview": {
+    "eyebrow": "Koltuğun en iyileri",
+    "title": "İmza hizmetler",
+    "description": "Ne istediğini biliyor musun?",
+    "bookIt": "Hemen ayırt.",
+    "notSure": "Emin değil misin? Menüye göz at.",
+    "viewAll": "Tüm hizmetleri gör",
+    "bookAria": "{name} için randevu al"
+  },
+  "serviceQuiz": {
+    "eyebrow": "Hizmet rehberi",
+    "title": "Ne istiyorsun?",
+    "description": "Bir yön seç, gerisini biz hallederiz. Danışma dahildir.",
+    "lookbook": "Stil galerisi",
+    "story": "Hikayemiz",
+    "team": "Ekiple tanış"
+  },
+  "serviceCategories": {
+    "cut": "Kesimler",
+    "beard": "Sakal",
+    "ritual": "Ritüeller",
+    "combo": "Kombinasyonlar"
+  },
+  "aboutPreview": {
+    "eyebrow": "Hikayemiz",
+    "quote": "Önce görünüşün konuşsun.",
+    "description": "Her koltuğun ardında yılların ustalığı var, sakin ve keskin bir berber deneyimine dönüştü.",
+    "pillars": [
+      "Profesyonel berberler tarafından yapılır",
+      "Hız değil, o an odaklı bir deneyim",
+      "Kısa ve orta uzunluklar için hassas kesimler"
+    ],
+    "readStory": "Hikayemizi oku",
+    "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
+    "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri"
+  },
+  "teamPreview": {
+    "eyebrow": "Ekip",
+    "title": "Ustalığın arkasındaki eller",
+    "meetTeam": "Ekiple tanış"
+  },
+  "gallery": {
+    "eyebrow": "Galeri",
+    "title": "Stil galerisi",
+    "viewGallery": "Galeriyi gör",
+    "comingSoonEyebrow": "Yakında",
+    "comingSoon": "Yeni fotoğraflar yolda.",
+    "filters": {
+      "all": "Tümü",
+      "cuts": "Kesimler",
+      "details": "Detaylar"
+    }
+  },
+  "reviews": {
+    "eyebrow": "Yorumlar",
+    "title": "Müşteriler ne diyor",
+    "googleReviewsCount": "147 Google yorumu",
+    "srRating": "5 üzerinden {rating} puan",
+    "goToReview": "{name} tarafından yapılan yorumu göster"
+  },
+  "bookingCta": {
+    "eyebrow": "Hazır olduğunda",
+    "title": "Koltuğunu ayırt.",
+    "description": "Bir saat seç, gerisini biz hallederiz: sakinlik, hassasiyet ve kendini belli eden bir kesim.",
+    "bookAppointment": "Randevu Al",
+    "contact": "İletişim"
+  },
+  "faq": {
+    "eyebrow": "SSS",
+    "title": "Sık sorulan sorular",
+    "items": [
+      {
+        "q": "Ne kadar erken gelmeliyim?",
+        "a": "Beş dakika önce gelmek idealdir. Koltuk boşsa kapıdan gelenler de memnuniyetle karşılanır, ancak randevular her zaman öncelikli."
+      },
+      {
+        "q": "Hangi hizmet bana uygun?",
+        "a": "Kısa ve orta uzunluklar için Signature Cut iyi bir başlangıç. Daha keskin bir fade mi istiyorsun? Precision Fade'i seç. Baştan aşağı bir yenilenme mi arıyorsun? ZENIZZ Ritual'i tercih et."
+      },
+      {
+        "q": "Her saç tipiyle çalışıyor musunuz?",
+        "a": "Evet: düz, dalgalı, kıvırcık, kalın, ince ve dokulu saçlar dahil. Kısa ve orta uzunluklarda uzmanız."
+      },
+      {
+        "q": "İptal politikanız nedir?",
+        "a": "Randevunu en az 5 saat öncesinden iptal etmeni rica ederiz. 10 dakikadan fazla gecikmelerde randevunu yeniden planlaman gerekebilir."
+      }
+    ]
+  },
+  "contactPreview": {
+    "eyebrow": "İletişim",
+    "title": "Atölyeyi ziyaret et",
+    "description": "İstanbul Beşiktaş'ın kalbinde. İçeri gel, koltuğa otur ve ustalığın konuşmasına izin ver.",
+    "address": "Adres",
+    "hours": "Çalışma saatleri",
+    "reachUs": "Bize ulaşın",
+    "mapTitle": "Google Haritalar'da ZENIZZ"
+  },
+  "footer": {
+    "newsletter": "Bize katıl. Açılışlar, sezonluk ritüeller ve atölye haberlerinden ilk sen haberdar ol.",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "E-posta",
+    "signUp": "Kaydol",
+    "navigate": "Sayfalar",
+    "visit": "Ziyaret",
+    "follow": "Takip Et",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
+  },
+  "days": {
+    "monday": "Pazartesi",
+    "tuesday": "Salı",
+    "wednesday": "Çarşamba",
+    "thursday": "Perşembe",
+    "friday": "Cuma",
+    "saturday": "Cumartesi",
+    "sunday": "Pazar",
+    "closed": "Kapalı"
+  },
+  "booking": {
+    "reservations": "Rezervasyonlar",
+    "defaultTitle": "Randevu Al",
+    "defaultDescription": "Berberini, hizmetini ve saatini seç. Harici randevu sistemi buraya sorunsuzca entegre edilebilir.",
+    "integrationReady": "Entegrasyona hazır",
+    "integrationText": "Bu alanı AxaBook veya başka bir sağlayıcıyla değiştirmek için BookingWidget bileşeninin şu özelliklerini kullan: provider, embedUrl, scriptSrc ve widgetId.",
+    "requestAppointment": "Randevu Talep Et",
+    "callStudio": "Stüdyoyu Ara",
+    "subject": "Randevu talebi"
+  },
+  "pages": {
+    "home": {
+      "title": "İstanbul'da Premium Berber"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "metaDescription": "ZENIZZ'in hikayesini keşfet: ustalık, o anda olmak ve hassasiyet üzerine kurulu, İstanbul'da premium bir berber.",
+      "eyebrow": "Hakkımızda",
+      "heroTitle": "Bu işi ciddiye alanlar için bir atölye.",
+      "heroDescription": "ZENIZZ, basit bir soruyla başladı: ya bir berber, iş ile ev arasındaki o sessizlik gibi hissettirseydi? Sıcak, editoryal ve ustalıkla uygulanmış.",
+      "paragraph1": "Kısa ve orta uzunluklarda uzmanız: fade'ler, makas işi, sakal şekillendirme ve klasik ritüeller. Trend olduğu için değil, ustalığımızın en keskin olduğu yer burası olduğu için.",
+      "paragraph2": "İç mekan, ışık, aletler, temposu: her şey o anda bulunma hissini yaratmak için seçildi. ZENIZZ'de sadece işin bitmesini beklemezsin. Görülürsün.",
+      "bookAppointment": "Randevu Al",
+      "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
+      "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri",
+      "bookingTitle": "ZENIZZ'i deneyimle",
+      "bookingDescription": "Bir danışma veya imza ritüel için randevu al. Randevu sistemi AxaBook entegrasyonuna hazır."
+    },
+    "services": {
+      "title": "Hizmetler",
+      "metaDescription": "Tüm ZENIZZ hizmetlerine göz at: imza kesimler, fade'ler, sakal şekillendirme, sıcak havlu tıraşı ve komple bakım ritüelleri.",
+      "eyebrow": "Hizmetler",
+      "heroTitle": "Özenle hazırlanmış menüler.",
+      "heroDescription": "Net fiyatlar, dürüst süreler ve her zaman kişisel bir danışma için zaman.",
+      "imageAlt": "Taze ve hassas bir saç kesiminin detayı",
+      "bookAppointment": "Randevu Al"
+    },
+    "team": {
+      "title": "Ekip",
+      "metaDescription": "ZENIZZ ekibiyle tanış: fade, makas işi, doku ve klasik ritüellerde uzman usta berberler.",
+      "eyebrow": "Ekip",
+      "heroTitle": "Ustalığın arkasındaki eller.",
+      "heroDescription": "Her berber kendi imzasını taşır. Birlikte ZENIZZ standardını oluştururlar.",
+      "bookingTitle": "Berberini seç",
+      "bookingDescription": "AxaBook bağlandığında favori uzmanınla direkt randevu alabilirsin. O zamana kadar randevu talebinde bulunabilirsin."
+    },
+    "gallery": {
+      "title": "Galeri",
+      "metaDescription": "ZENIZZ galerisini keşfet: İstanbul'daki berberimizden kesimler, detaylar ve atmosfer.",
+      "eyebrow": "Galeri",
+      "heroTitle": "Atölyeden kareler.",
+      "heroDescription": "İlham için bir seçki, katalog değil."
+    },
+    "contact": {
+      "title": "İletişim",
+      "metaDescription": "İstanbul Beşiktaş'taki ZENIZZ'i ziyaret et veya randevu al. Çalışma saatlerini ve iletişim bilgilerini incele.",
+      "eyebrow": "İletişim",
+      "heroTitle": "Uğra. Ya da önceden planla.",
+      "heroDescription": "Seni atölyemizde ağırlamayı çok isteriz. Sorular veya randevular için: ara, e-posta gönder veya aşağıdaki randevu alanını kullan.",
+      "studio": "Stüdyo",
+      "studioName": "ZENIZZ İstanbul",
+      "contactLabel": "İletişim",
+      "openingHours": "Çalışma saatleri",
+      "call": "Ara",
+      "mapTitle": "Google Haritalar'da ZENIZZ"
+    }
+  },
+  "services": {
+    "signature-cut": {
+      "name": "Signature Cut",
+      "description": "Fade veya makas işiyle kişiye özel bir kesim, sıcak havlu ve ense tıraşıyla tamamlanır."
+    },
+    "precision-fade": {
+      "name": "Precision Fade",
+      "description": "Doku, form ve dengeye özel dikkatle uygulanan keskin fade'ler, skin fade'den yumuşak taper'a kadar."
+    },
+    "scissor-cut": {
+      "name": "Scissor Cut",
+      "description": "Orta uzunluklar için tamamen makasla yapılan bir kesim. Yumuşak katlar, hareket ve doğal bir akış."
+    },
+    "beard-sculpt": {
+      "name": "Beard Sculpt",
+      "description": "Trimmer ve ustura ile sakal şekillendirme, sıcak havlu ve besleyici bakımla birlikte."
+    },
+    "hot-towel-shave": {
+      "name": "Hot Towel Shave",
+      "description": "Sıcak havlular, zengin köpük ve soğuk havlu finishiyle klasik bir ustura tıraşı."
+    },
+    "cut-beard": {
+      "name": "Cut and Beard",
+      "description": "İmza kesimimiz sakal şekillendirmeyle birleşiyor: komple bakım ritüeli."
+    },
+    "zenizz-ritual": {
+      "name": "ZENIZZ Ritual",
+      "description": "İmza yolculuğumuz: danışma, kesim, sakal veya tıraş, kafa derisi masajı ve şekillendirilmiş bir final."
+    },
+    "junior-cut": {
+      "name": "Junior Cut",
+      "description": "12 yaşına kadar erkek çocuklar için. Sabırlı, hassas ve rahat bir tempoda."
+    }
+  },
+  "team": {
+    "yusuf": {
+      "role": "Kurucu ve Usta Berber",
+      "bio": "Yusuf, ZENIZZ'i bir saç kesiminin teknikten fazlası olduğu inancıyla kurdu: o anda bulunmak, sakinlik ve ustalık.",
+      "specialties": ["Fade'ler", "Makas işi", "Danışma"]
+    }
+  },
+  "reviewItems": {
+    "r1": {
+      "text": "Hollanda'dan geliyorum ve bunu gerçek bir Avrupa berberi olarak adlandırıyorum!",
+      "date": "3 hafta önce"
+    },
+    "r2": {
+      "text": "Zenizz'in erkekleri gerçek ustalar! Kesinlikle tavsiye ederim!!",
+      "date": "2 hafta önce"
+    },
+    "r3": {
+      "text": "Bir üst düzey berber. Tam bir memnuniyet, gerçek bir tavsiye. Müşterinin isteklerine gerçekten önem veriliyor ve kesimden önce mükemmel bir danışma yapıldı.",
+      "date": "4 ay önce"
+    },
+    "r4": {
+      "text": "Burayı keşfettiğim için çok mutluyum, harika bir berber dükkanı. Önümüzdeki yıllarda da saçımı burada kestirmeyi planlıyorum.",
+      "date": "1 ay önce"
+    },
+    "r5": {
+      "text": "Çok samimi bir hizmet ve mükemmel bir kesim. Berber temiz çalışıyor, zaman ayırıyor ve her detaya dikkat ediyor. Kesinlikle tavsiye ederim, İstanbul'un en iyisi!",
+      "date": "1 ay önce"
+    },
+    "r6": {
+      "text": "Çok yardımsever ve süper bir kesim.",
+      "date": "6 ay önce"
+    }
+  }
+}
