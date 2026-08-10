@@ -40,12 +40,9 @@ export const navigation: NavItem[] = [
 
 export const images = {
   hero: "/Zenizz.png",
-  about: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80",
-  aboutSecondary:
-    "https://images.unsplash.com/photo-1633681926022-84c1038a2c84?auto=format&fit=crop&w=1200&q=80",
-  services:
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1400&q=80",
-  cta: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80",
-  contact:
-    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=80",
+  about: "/gallery-yusuf-working.jpg",
+  aboutSecondary: "/gallery-yusuf-client.jpg",
+  services: "/gallery-barberpole-trim.jpg",
+  cta: "/gallery-window-cut.jpg",
+  contact: "/gallery-mirrors-fade.jpg",
 } as const;
