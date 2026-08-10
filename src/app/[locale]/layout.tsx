@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Source_Code_Pro } from "next/font/google";
+import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,23 +11,23 @@ import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const display = Outfit({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+const outfit = localFont({
+  src: "../../fonts/outfit-variable.woff2",
+  weight: "100 900",
   variable: "--font-display",
   display: "swap",
 });
 
-const sans = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const sans = localFont({
+  src: "../../fonts/outfit-variable.woff2",
+  weight: "100 900",
   variable: "--font-sans",
   display: "swap",
 });
 
-const mono = Source_Code_Pro({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const mono = localFont({
+  src: "../../fonts/source-code-pro-variable.woff2",
+  weight: "200 900",
   variable: "--font-mono",
   display: "swap",
 });
@@ -124,7 +124,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={locale}>
-      <body className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}>
+      <body className={`${outfit.variable} ${sans.variable} ${mono.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
