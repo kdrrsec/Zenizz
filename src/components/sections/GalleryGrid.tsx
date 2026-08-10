@@ -1,50 +1,24 @@
-"use client";
-
-import Image from "next/image";
-import { useMemo, useState } from "react";
 import { gallery } from "@/data/gallery";
 import { Container } from "@/components/ui/Container";
 import { Stagger, StaggerItem } from "@/components/ui/Reveal";
-import { cn } from "@/lib/utils";
-
-const filters = [
-  { id: "all", label: "All" },
-  { id: "cuts", label: "Cuts" },
-  { id: "details", label: "Details" },
-] as const;
+import Image from "next/image";
 
 export function GalleryGrid() {
-  const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("all");
-
-  const items = useMemo(
-    () => (filter === "all" ? gallery : gallery.filter((g) => g.category === filter)),
-    [filter],
-  );
+  if (gallery.length === 0) {
+    return (
+      <Container wide>
+        <div className="border border-dashed border-line py-24 text-center">
+          <p className="eyebrow mb-3">Binnenkort</p>
+          <p className="text-muted">Nieuwe foto&apos;s volgen snel.</p>
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <Container wide>
-      <div className="mb-10 flex flex-wrap gap-2" role="tablist" aria-label="Gallery filters">
-        {filters.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            role="tab"
-            aria-selected={filter === item.id}
-            onClick={() => setFilter(item.id)}
-            className={cn(
-              "eyebrow border px-4 py-2 transition-colors duration-300",
-              filter === item.id
-                ? "border-ink bg-ink text-paper"
-                : "border-line text-muted hover:border-ink hover:text-ink",
-            )}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
-
-      <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" key={filter}>
-        {items.map((item) => (
+      <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {gallery.map((item) => (
           <StaggerItem key={item.id} className="group relative aspect-[3/4] overflow-hidden bg-soft">
             <Image
               src={item.src}

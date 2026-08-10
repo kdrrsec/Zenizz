@@ -9,6 +9,8 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 export function GalleryPreview() {
   const items = gallery.slice(0, 6);
 
+  if (items.length === 0) return null;
+
   return (
     <section className="border-y border-line bg-soft py-20 md:py-28" aria-labelledby="gallery-preview-title">
       <Container wide>
