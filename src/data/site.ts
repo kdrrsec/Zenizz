@@ -42,7 +42,6 @@ export const images = {
   hero: "/Zenizz.png",
   about: "/gallery-yusuf-working.jpg",
   aboutSecondary: "/gallery-yusuf-client.jpg",
-  services: "/gallery-barberpole-trim.jpg",
-  cta: "/gallery-window-cut.jpg",
-  contact: "/gallery-mirrors-fade.jpg",
+  services: "/gallery-window-cut.jpg",
+  cta: "/gallery-mirrors-fade.jpg",
 } as const;

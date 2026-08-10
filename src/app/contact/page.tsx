@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { siteConfig, images } from "@/data/site";
+import { siteConfig } from "@/data/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { ImageReveal } from "@/components/ui/ImageReveal";
 import { BookingWidget } from "@/components/booking/BookingWidget";
 import { Button } from "@/components/ui/Button";
+
+const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -78,12 +79,16 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-7 space-y-8">
-              <ImageReveal
-                src={images.contact}
-                alt="Grooming tools in the ZENIZZ studio"
-                className="aspect-[16/11]"
-                parallax
-              />
+              <Reveal className="relative aspect-[16/11] overflow-hidden bg-line">
+                <iframe
+                  src={GOOGLE_MAPS_EMBED_SRC}
+                  title="ZENIZZ op Google Maps"
+                  className="absolute inset-0 h-full w-full grayscale-[15%]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </Reveal>
               <BookingWidget
                 title="Book Appointment"
                 description="Dit blok is voorbereid op AxaBook of een andere externe booking provider. Configureer provider, widgetId of embedUrl om live te gaan."

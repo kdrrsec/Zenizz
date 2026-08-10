@@ -59,14 +59,16 @@ export default function AboutPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
               <ImageReveal
                 src={images.about}
-                alt="Barbershop chairs in soft afternoon light"
+                alt="Yusuf aan het werk in het ZENIZZ atelier"
                 className="aspect-[3/4] sm:translate-y-10"
+                imgClassName="object-[center_25%]"
                 parallax
               />
               <ImageReveal
                 src={images.aboutSecondary}
-                alt="Clean modern barbershop atmosphere"
+                alt="Yusuf met een tevreden klant"
                 className="aspect-[3/4]"
+                imgClassName="object-[center_15%]"
                 parallax
               />
             </div>

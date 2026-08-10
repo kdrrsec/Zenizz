@@ -7,7 +7,15 @@ import { Reveal } from "@/components/ui/Reveal";
 export function BookingCTA() {
   return (
     <section className="relative overflow-hidden py-28 md:py-36 text-paper" aria-labelledby="booking-cta-title">
-      <Image src={images.cta} alt="" fill sizes="100vw" className="object-cover" aria-hidden />
+      <Image
+        src={images.cta}
+        alt=""
+        fill
+        sizes="100vw"
+        style={{ objectPosition: "center 25%" }}
+        className="object-cover"
+        aria-hidden
+      />
       <div className="absolute inset-0 bg-black/65" />
 
       <Container className="relative z-10 text-center">

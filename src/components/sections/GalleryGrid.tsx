@@ -60,6 +60,7 @@ export function GalleryGrid() {
               alt={item.alt}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              style={{ objectPosition: item.focus }}
               className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
           </StaggerItem>

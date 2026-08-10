@@ -1,8 +1,9 @@
-import { siteConfig, images } from "@/data/site";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { BookingWidget } from "@/components/booking/BookingWidget";
 import { Reveal } from "@/components/ui/Reveal";
-import { ImageReveal } from "@/components/ui/ImageReveal";
+
+const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
 
 export function ContactPreview() {
   return (
@@ -57,13 +58,16 @@ export function ContactPreview() {
           </div>
 
           <div className="space-y-8 lg:col-span-7">
-            <ImageReveal
-              src={images.contact}
-              alt="Barber tools on a clean station"
-              className="aspect-[16/10]"
-              sizes="(max-width: 1024px) 100vw, 55vw"
-              parallax
-            />
+            <Reveal className="relative aspect-[16/10] overflow-hidden bg-line">
+              <iframe
+                src={GOOGLE_MAPS_EMBED_SRC}
+                title="ZENIZZ op Google Maps"
+                className="absolute inset-0 h-full w-full grayscale-[15%]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </Reveal>
             <BookingWidget />
           </div>
         </div>
