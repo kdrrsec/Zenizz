@@ -32,9 +32,34 @@ export default async function ServicesPage({ params }: PageProps) {
   const tServices = await getTranslations("services");
   const tCategories = await getTranslations("serviceCategories");
 
+  const anchorOffset = "scroll-mt-[calc(var(--announce-height)+var(--nav-height)+1.5rem)]";
+
   return (
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("heroTitle")} description={t("heroDescription")} />
+
+      <div className="sticky top-[calc(var(--announce-height)+var(--nav-height))] z-30 border-b border-line bg-paper/95 backdrop-blur-md">
+        <Container wide>
+          <nav
+            className="flex flex-wrap gap-2 py-4"
+            aria-label={t("eyebrow")}
+          >
+            {serviceCategories.map((category) => {
+              const count = services.filter((s) => s.category === category.id).length;
+              if (!count) return null;
+              return (
+                <a
+                  key={category.id}
+                  href={`#${category.id}`}
+                  className="eyebrow border border-line px-4 py-2 text-muted transition-colors hover:border-ink hover:text-ink"
+                >
+                  {tCategories(category.id)}
+                </a>
+              );
+            })}
+          </nav>
+        </Container>
+      </div>
 
       <section className="py-16 md:py-24">
         <Container wide>
@@ -43,7 +68,7 @@ export default async function ServicesPage({ params }: PageProps) {
               <ImageReveal
                 src={images.services}
                 alt={t("imageAlt")}
-                className="aspect-[4/5] sticky top-28"
+                className="aspect-[4/5] sticky top-[calc(var(--announce-height)+var(--nav-height)+5rem)]"
                 parallax
               />
             </div>
@@ -52,30 +77,33 @@ export default async function ServicesPage({ params }: PageProps) {
                 const items = services.filter((s) => s.category === category.id);
                 if (!items.length) return null;
                 return (
-                  <div key={category.id} id={category.id} className="scroll-mt-[calc(var(--announce-height)+var(--nav-height)+1.5rem)]">
-                    <Reveal>
-                      <p className="eyebrow mb-6">{tCategories(category.id)}</p>
+                  <div key={category.id} id={category.id} className={anchorOffset}>
+                    <Reveal className="mb-7 flex items-baseline justify-between gap-4 border-b border-line pb-4">
+                      <h2 className="display text-3xl md:text-4xl">{tCategories(category.id)}</h2>
+                      <span className="font-mono text-xs tracking-[0.1em] text-stone">
+                        {items.length}
+                      </span>
                     </Reveal>
-                    <Stagger className="divide-y divide-line border-y border-line">
+                    <Stagger className="grid gap-4 sm:grid-cols-2">
                       {items.map((service) => (
                         <StaggerItem
                           key={service.id}
-                          className="grid gap-4 py-7 md:grid-cols-12 md:items-center"
+                          className="border border-line p-6 transition-colors hover:border-ink"
                         >
-                          <div className="md:col-span-4">
-                            <h2 className="display text-3xl">
+                          <div className="flex items-start justify-between gap-3">
+                            <h3 className="display text-2xl !leading-[1.05]">
                               <span lang="en">{tServices(`${service.id}.name`)}</span>
-                            </h2>
-                          </div>
-                          <p className="md:col-span-5 text-muted leading-relaxed">
-                            {tServices(`${service.id}.description`)}
-                          </p>
-                          <div className="md:col-span-3 md:text-right">
-                            <p className="font-mono text-sm tracking-[0.12em] uppercase">
+                            </h3>
+                            <p className="shrink-0 whitespace-nowrap font-mono text-sm tracking-[0.08em]">
                               {service.price}
                             </p>
-                            <p className="mt-1 text-sm text-stone">{service.duration}</p>
                           </div>
+                          <p className="mt-1 font-mono text-xs tracking-[0.1em] uppercase text-stone">
+                            {service.duration}
+                          </p>
+                          <p className="mt-4 text-sm leading-relaxed text-muted">
+                            {tServices(`${service.id}.description`)}
+                          </p>
                         </StaggerItem>
                       ))}
                     </Stagger>

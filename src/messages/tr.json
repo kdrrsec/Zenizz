@@ -35,14 +35,6 @@
     "viewAll": "Tüm hizmetleri gör",
     "bookAria": "{name} için randevu al"
   },
-  "serviceQuiz": {
-    "eyebrow": "Hizmet rehberi",
-    "title": "Ne istiyorsun?",
-    "description": "Bir yön seç, gerisini biz hallederiz. Danışma dahildir.",
-    "lookbook": "Stil galerisi",
-    "story": "Hikayemiz",
-    "team": "Ekiple tanış"
-  },
   "serviceCategories": {
     "cut": "Kesimler",
     "beard": "Sakal",

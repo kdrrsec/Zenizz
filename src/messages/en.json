@@ -35,14 +35,6 @@
     "viewAll": "View all services",
     "bookAria": "Book {name}"
   },
-  "serviceQuiz": {
-    "eyebrow": "Service guide",
-    "title": "What do you need?",
-    "description": "Pick a direction. We'll take it from there, consult included.",
-    "lookbook": "Lifestyle lookbook",
-    "story": "Our story",
-    "team": "Meet the team"
-  },
   "serviceCategories": {
     "cut": "Cuts",
     "beard": "Beard",
