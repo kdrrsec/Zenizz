@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,26 +10,15 @@ import { siteConfig } from "@/data/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const outfit = localFont({
-  src: "../../fonts/outfit-variable.woff2",
-  weight: "100 900",
-  variable: "--font-display",
-  display: "swap",
-});
-
-const sans = localFont({
-  src: "../../fonts/outfit-variable.woff2",
-  weight: "100 900",
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const mono = localFont({
-  src: "../../fonts/source-code-pro-variable.woff2",
-  weight: "200 900",
-  variable: "--font-mono",
-  display: "swap",
-});
+// Fonts are self-hosted and wired up via @font-face rules in globals.css
+// (with latin + latin-ext unicode-range subsets for correct Turkish glyphs),
+// so the --font-display/--font-sans/--font-mono variables just need to be
+// set to those font-family names here instead of using next/font.
+const fontVariablesStyle = {
+  "--font-display": "'Outfit', system-ui, sans-serif",
+  "--font-sans": "'Outfit', system-ui, sans-serif",
+  "--font-mono": "'Source Code Pro Variable', ui-monospace, monospace",
+} as React.CSSProperties;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -124,7 +112,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
   return (
     <html lang={locale}>
-      <body className={`${outfit.variable} ${sans.variable} ${mono.variable} antialiased`}>
+      <body style={fontVariablesStyle} className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

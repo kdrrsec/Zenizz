@@ -63,7 +63,9 @@ export default async function ServicesPage({ params }: PageProps) {
                           className="grid gap-4 py-7 md:grid-cols-12 md:items-center"
                         >
                           <div className="md:col-span-4">
-                            <h2 className="display text-3xl">{tServices(`${service.id}.name`)}</h2>
+                            <h2 className="display text-3xl">
+                              <span lang="en">{tServices(`${service.id}.name`)}</span>
+                            </h2>
                           </div>
                           <p className="md:col-span-5 text-muted leading-relaxed">
                             {tServices(`${service.id}.description`)}

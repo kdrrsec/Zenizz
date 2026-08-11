@@ -44,7 +44,7 @@ export function ServicesPreview() {
                     {service.duration}
                   </p>
                   <h3 className="display mt-4 text-3xl md:text-4xl transition-transform duration-500 group-hover:translate-x-1">
-                    {name}
+                    <span lang="en">{name}</span>
                   </h3>
                   <p className="mt-4 max-w-sm text-sm leading-relaxed text-faded">
                     {tServices(`${service.id}.description`)}
