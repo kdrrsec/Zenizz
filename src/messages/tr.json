@@ -135,12 +135,26 @@
   "booking": {
     "reservations": "Rezervasyonlar",
     "defaultTitle": "Randevu Al",
-    "defaultDescription": "Berberini, hizmetini ve saatini seç. Harici randevu sistemi buraya sorunsuzca entegre edilebilir.",
-    "integrationReady": "Entegrasyona hazır",
-    "integrationText": "Bu alanı AxaBook veya başka bir sağlayıcıyla değiştirmek için BookingWidget bileşeninin şu özelliklerini kullan: provider, embedUrl, scriptSrc ve widgetId.",
-    "requestAppointment": "Randevu Talep Et",
-    "callStudio": "Stüdyoyu Ara",
-    "subject": "Randevu talebi"
+    "defaultDescription": "Bir hizmet ve sana uygun bir saat seç. Telefon ya da e-postayla onaylıyoruz.",
+    "subject": "Randevu talebi",
+    "step1Title": "Bir hizmet seç",
+    "step2Title": "Gün ve saat seç",
+    "step3Title": "Bilgilerin",
+    "change": "Değiştir",
+    "today": "Bugün",
+    "minutesShort": "{minutes} dk",
+    "noSlots": "O gün için uygun saat yok.",
+    "nameLabel": "Ad",
+    "namePlaceholder": "Adın",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "Telefon numaran",
+    "noteLabel": "Not (isteğe bağlı)",
+    "notePlaceholder": "Bilmemiz gereken bir şey var mı?",
+    "submit": "Talebi gönder",
+    "summaryLine": "{service} · {date} · {time}",
+    "successTitle": "Talebin gönderilmeye hazır",
+    "successText": "E-posta uygulaman her şey dolu şekilde açılacak. En kısa sürede telefon ya da e-postayla onaylıyoruz.",
+    "newRequest": "Yeni talep oluştur"
   },
   "pages": {
     "home": {
@@ -158,7 +172,7 @@
       "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
       "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri",
       "bookingTitle": "ZENIZZ'i deneyimle",
-      "bookingDescription": "Bir danışma veya imza ritüel için randevu al. Randevu sistemi AxaBook entegrasyonuna hazır."
+      "bookingDescription": "Birkaç dokunuşla bir danışma veya imza ritüel için randevu al."
     },
     "services": {
       "title": "Hizmetler",
@@ -175,8 +189,8 @@
       "eyebrow": "Ekip",
       "heroTitle": "Ustalığın arkasındaki eller.",
       "heroDescription": "Her berber kendi imzasını taşır. Birlikte ZENIZZ standardını oluştururlar.",
-      "bookingTitle": "Berberini seç",
-      "bookingDescription": "AxaBook bağlandığında favori uzmanınla direkt randevu alabilirsin. O zamana kadar randevu talebinde bulunabilirsin."
+      "bookingTitle": "Sandalyeni ayır",
+      "bookingDescription": "Bir hizmet ve saat seç, gerisini biz hallederiz."
     },
     "gallery": {
       "title": "Galeri",

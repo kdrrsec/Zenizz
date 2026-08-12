@@ -135,12 +135,26 @@
   "booking": {
     "reservations": "Reservations",
     "defaultTitle": "Book Appointment",
-    "defaultDescription": "Pick your barber, service, and time. The external booking system connects seamlessly here.",
-    "integrationReady": "Integration ready",
-    "integrationText": "Swap this placeholder for AxaBook or another provider through the BookingWidget props: provider, embedUrl, scriptSrc and widgetId.",
-    "requestAppointment": "Request Appointment",
-    "callStudio": "Call Studio",
-    "subject": "Appointment request"
+    "defaultDescription": "Pick a service and a time that works. We confirm by phone or email.",
+    "subject": "Appointment request",
+    "step1Title": "Choose a service",
+    "step2Title": "Pick a day and time",
+    "step3Title": "Your details",
+    "change": "Change",
+    "today": "Today",
+    "minutesShort": "{minutes} min",
+    "noSlots": "No times available that day.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Your phone number",
+    "noteLabel": "Note (optional)",
+    "notePlaceholder": "Anything we should know?",
+    "submit": "Send request",
+    "summaryLine": "{service} · {date} · {time}",
+    "successTitle": "Request ready to send",
+    "successText": "Your email app will open with everything filled in. We confirm by phone or email as soon as we can.",
+    "newRequest": "Start a new request"
   },
   "pages": {
     "home": {
@@ -158,7 +172,7 @@
       "aboutAlt": "Yusuf at work in the ZENIZZ atelier",
       "aboutSecondaryAlt": "Yusuf with a happy client",
       "bookingTitle": "Experience ZENIZZ",
-      "bookingDescription": "Book a consult or a signature ritual. The booking system is ready for AxaBook integration."
+      "bookingDescription": "Book a consult or a signature ritual in a few taps."
     },
     "services": {
       "title": "Services",
@@ -175,8 +189,8 @@
       "eyebrow": "Team",
       "heroTitle": "The hands behind the craft.",
       "heroDescription": "Every barber brings their own signature. Together they set the ZENIZZ standard.",
-      "bookingTitle": "Choose your barber",
-      "bookingDescription": "Book directly with your favorite specialist once AxaBook is connected. Until then, you can request an appointment."
+      "bookingTitle": "Book your chair",
+      "bookingDescription": "Pick a service and a time. We'll take it from there."
     },
     "gallery": {
       "title": "Gallery",

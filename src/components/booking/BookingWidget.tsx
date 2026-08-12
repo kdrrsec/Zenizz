@@ -2,19 +2,16 @@
 
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { QuickBookingFlow } from "@/components/booking/QuickBookingFlow";
 
 /**
- * BookingWidget: integration-ready placeholder for an external booking system.
+ * BookingWidget: renders the built-in quick booking flow by default.
  *
- * To connect AxaBook or another provider later:
+ * To connect AxaBook or another provider instead:
  * 1. Set `provider` to "axabook" (or your provider id)
  * 2. Pass `embedUrl` or `scriptSrc` + `widgetId`
  * 3. Optionally pass `onReady` for analytics hooks
- *
- * Until configured, this renders a clear CTA that scrolls/opens the booking intent.
  */
 export type BookingProvider = "none" | "axabook" | "custom";
 
@@ -138,29 +135,7 @@ export function BookingWidget({
           />
         ) : null}
 
-        {provider === "none" ? (
-          <div className="mt-10 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-            <div className="space-y-3 text-sm text-faded leading-relaxed">
-              <p>
-                <span className="font-mono uppercase tracking-[0.14em] text-ink">
-                  {t("integrationReady")}
-                </span>
-              </p>
-              <p>{t("integrationText")}</p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-              <Button
-                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(t("subject"))}`}
-                variant="primary"
-              >
-                {t("requestAppointment")}
-              </Button>
-              <Button href={siteConfig.phoneHref} variant="secondary">
-                {t("callStudio")}
-              </Button>
-            </div>
-          </div>
-        ) : null}
+        {provider === "none" ? <QuickBookingFlow /> : null}
       </div>
     </section>
   );
