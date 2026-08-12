@@ -5,7 +5,7 @@
     "team": "Ekip",
     "gallery": "Galeri",
     "contact": "İletişim",
-    "bookAppointment": "Randevu Al",
+    "bookAppointment": "Randevu Yap",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
     "mainNav": "Ana menü",
@@ -17,12 +17,11 @@
     "since": "2026'dan beri",
     "bookChair": "Koltuğunu ayırt",
     "premium": "Premium berber deneyimi",
-    "fades": "Skin fade",
-    "beard": "Sakal şekillendirme"
+    "fades": "Skin fade"
   },
   "hero": {
     "headline": "İstanbul'un en iyi kesimi.",
-    "bookAppointment": "Randevu Al",
+    "bookAppointment": "Randevu Yap",
     "viewServices": "Hizmetleri Gör",
     "heroAlt": "Hafif derinlik etkisiyle çekilmiş, özenli bir saç kesiminin yakın çekimi"
   },
@@ -77,7 +76,7 @@
     "eyebrow": "Hazır olduğunda",
     "title": "Koltuğunu ayırt.",
     "description": "Bir saat seç, gerisini biz hallederiz: sakinlik, hassasiyet ve kendini belli eden bir kesim.",
-    "bookAppointment": "Randevu Al",
+    "bookAppointment": "Randevu Yap",
     "contact": "İletişim"
   },
   "faq": {
@@ -112,10 +111,7 @@
     "mapTitle": "Google Haritalar'da ZENIZZ"
   },
   "footer": {
-    "newsletter": "Bize katıl. Açılışlar, sezonluk ritüeller ve atölye haberlerinden ilk sen haberdar ol.",
-    "emailLabel": "E-posta",
-    "emailPlaceholder": "E-posta",
-    "signUp": "Kaydol",
+    "tagline": "İstanbul'un en iyi berberi. Sakinlik, hassasiyet ve kendini belli eden bir kesim.",
     "navigate": "Sayfalar",
     "visit": "Ziyaret",
     "follow": "Takip Et",
@@ -134,7 +130,7 @@
   },
   "booking": {
     "reservations": "Rezervasyonlar",
-    "defaultTitle": "Randevu Al",
+    "defaultTitle": "Randevu Yap",
     "defaultDescription": "Bir hizmet ve sana uygun bir saat seç. Telefon ya da e-postayla onaylıyoruz.",
     "subject": "Randevu talebi",
     "step1Title": "Bir hizmet seç",
@@ -168,7 +164,7 @@
       "heroDescription": "ZENIZZ, basit bir soruyla başladı: ya bir berber, iş ile ev arasındaki o sessizlik gibi hissettirseydi? Sıcak, editoryal ve ustalıkla uygulanmış.",
       "paragraph1": "Kısa ve orta uzunluklarda uzmanız: fade'ler, makas işi, sakal şekillendirme ve klasik ritüeller. Trend olduğu için değil, ustalığımızın en keskin olduğu yer burası olduğu için.",
       "paragraph2": "İç mekan, ışık, aletler, temposu: her şey o anda bulunma hissini yaratmak için seçildi. ZENIZZ'de sadece işin bitmesini beklemezsin. Görülürsün.",
-      "bookAppointment": "Randevu Al",
+      "bookAppointment": "Randevu Yap",
       "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
       "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri"
     },
@@ -179,7 +175,7 @@
       "heroTitle": "Özenle hazırlanmış menüler.",
       "heroDescription": "Net fiyatlar, dürüst süreler ve her zaman kişisel bir danışma için zaman.",
       "imageAlt": "Taze ve hassas bir saç kesiminin detayı",
-      "bookAppointment": "Randevu Al"
+      "bookAppointment": "Randevu Yap"
     },
     "team": {
       "title": "Ekip",
@@ -198,7 +194,7 @@
       "heroDescription": "İlham için bir seçki, katalog değil."
     },
     "book": {
-      "title": "Randevu Al",
+      "title": "Randevu Yap",
       "metaDescription": "Beşiktaş, İstanbul'daki ZENIZZ'de randevunu al. Bir hizmet ve saat seç, talebini gönder."
     },
     "contact": {

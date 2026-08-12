@@ -73,8 +73,6 @@ export function Navbar() {
                 <span aria-hidden>·</span>
                 <span>{t("marquee.fades")}</span>
                 <span aria-hidden>·</span>
-                <span>{t("marquee.beard")}</span>
-                <span aria-hidden>·</span>
               </span>
             ))}
           </div>

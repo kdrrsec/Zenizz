@@ -17,8 +17,7 @@
     "since": "Est. 2026",
     "bookChair": "Book your chair",
     "premium": "Premium barber experience",
-    "fades": "Skin fades",
-    "beard": "Beard sculpt"
+    "fades": "Skin fades"
   },
   "hero": {
     "headline": "Istanbul's finest cut.",
@@ -112,10 +111,7 @@
     "mapTitle": "ZENIZZ on Google Maps"
   },
   "footer": {
-    "newsletter": "Join us. Be first to know about openings, seasonal rituals, and atelier news.",
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "signUp": "Sign up",
+    "tagline": "The best barbershop in Istanbul. Calm, precision, and a cut that speaks for itself.",
     "navigate": "Navigate",
     "visit": "Visit",
     "follow": "Follow",

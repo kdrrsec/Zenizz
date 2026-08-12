@@ -1,9 +1,9 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { navigation, siteConfig } from "@/data/site";
 import { formatAddress } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 
 export function Footer() {
   const t = useTranslations();
@@ -14,30 +14,17 @@ export function Footer() {
       <Container wide className="py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="font-mono text-sm font-semibold tracking-[0.14em] uppercase">
-              {siteConfig.name}
-            </p>
-            <p className="mt-5 max-w-sm text-faded leading-relaxed">{t("footer.newsletter")}</p>
-            <form
-              className="mt-6 flex max-w-md gap-2"
-              action={`mailto:${siteConfig.email}`}
-              method="get"
-            >
-              <label className="sr-only" htmlFor="footer-email">
-                {t("footer.emailLabel")}
-              </label>
-              <input
-                id="footer-email"
-                name="body"
-                type="email"
-                required
-                placeholder={t("footer.emailPlaceholder")}
-                className="w-full border border-line bg-soft px-4 py-3 font-mono text-sm outline-none transition-colors focus:border-ink"
+            <div className="relative h-9 w-[150px]" aria-hidden="true">
+              <Image
+                src="/zenizz-logo.png"
+                alt=""
+                fill
+                sizes="150px"
+                className="object-contain object-left"
               />
-              <Button type="submit" variant="primary" size="sm">
-                {t("footer.signUp")}
-              </Button>
-            </form>
+            </div>
+            <span className="sr-only">{siteConfig.name}</span>
+            <p className="mt-5 max-w-sm text-faded leading-relaxed">{t("footer.tagline")}</p>
           </div>
 
           <div className="md:col-span-2">
