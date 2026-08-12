@@ -27,19 +27,14 @@
     "heroAlt": "Hafif derinlik etkisiyle çekilmiş, özenli bir saç kesiminin yakın çekimi"
   },
   "servicesPreview": {
-    "eyebrow": "Koltuğun en iyileri",
-    "title": "İmza hizmetler",
+    "eyebrow": "Zenizz'in en iyileri",
+    "title": "Hizmetler",
     "description": "Ne istediğini biliyor musun?",
     "bookIt": "Hemen ayırt.",
     "notSure": "Emin değil misin? Menüye göz at.",
     "viewAll": "Tüm hizmetleri gör",
-    "bookAria": "{name} için randevu al"
-  },
-  "serviceCategories": {
-    "cut": "Kesimler",
-    "beard": "Sakal",
-    "ritual": "Ritüeller",
-    "combo": "Kombinasyonlar"
+    "bookAria": "{name} için randevu al",
+    "from": "Başlangıç"
   },
   "aboutPreview": {
     "eyebrow": "Hikayemiz",
@@ -167,7 +162,7 @@
     },
     "services": {
       "title": "Hizmetler",
-      "metaDescription": "Tüm ZENIZZ hizmetlerine göz at: imza kesimler, fade'ler, sakal şekillendirme, sıcak havlu tıraşı ve komple bakım ritüelleri.",
+      "metaDescription": "ZENIZZ hizmetlerine ve fiyatlarına göz at: saç kesimi, sakal bakımı, kesim ve sakal kombinasyonları ve çocuk kesimleri.",
       "eyebrow": "Hizmetler",
       "heroTitle": "Özenle hazırlanmış menüler.",
       "heroDescription": "Net fiyatlar, dürüst süreler ve her zaman kişisel bir danışma için zaman.",
@@ -205,37 +200,22 @@
     }
   },
   "services": {
-    "signature-cut": {
-      "name": "Signature Cut",
-      "description": "Fade veya makas işiyle kişiye özel bir kesim, sıcak havlu ve ense tıraşıyla tamamlanır."
+    "haircut": {
+      "name": "Haircut",
+      "description": "Tarzına tam uyan, kişiye özel bir kesim."
     },
-    "precision-fade": {
-      "name": "Precision Fade",
-      "description": "Doku, form ve dengeye özel dikkatle uygulanan keskin fade'ler, skin fade'den yumuşak taper'a kadar."
-    },
-    "scissor-cut": {
-      "name": "Scissor Cut",
-      "description": "Orta uzunluklar için tamamen makasla yapılan bir kesim. Yumuşak katlar, hareket ve doğal bir akış."
-    },
-    "beard-sculpt": {
-      "name": "Beard Sculpt",
-      "description": "Trimmer ve ustura ile sakal şekillendirme, sıcak havlu ve besleyici bakımla birlikte."
-    },
-    "hot-towel-shave": {
-      "name": "Hot Towel Shave",
-      "description": "Sıcak havlular, zengin köpük ve soğuk havlu finishiyle klasik bir ustura tıraşı."
+    "beard": {
+      "name": "Beard",
+      "description": "Yüz hattınla uyumlu, keskin bir sakal düzeltme."
     },
     "cut-beard": {
-      "name": "Cut and Beard",
-      "description": "İmza kesimimiz sakal şekillendirmeyle birleşiyor: komple bakım ritüeli."
+      "name": "Cut & Beard",
+      "description": "Komple bakım. Baştan çeneye tazelik."
     },
-    "zenizz-ritual": {
-      "name": "ZENIZZ Ritual",
-      "description": "İmza yolculuğumuz: danışma, kesim, sakal veya tıraş, kafa derisi masajı ve şekillendirilmiş bir final."
-    },
-    "junior-cut": {
-      "name": "Junior Cut",
-      "description": "12 yaşına kadar erkek çocuklar için. Sabırlı, hassas ve rahat bir tempoda."
+    "kids-cut": {
+      "name": "Kids Cut",
+      "nameSuffix": "(10 yaşına kadar)",
+      "description": "Sabırlı ve rahat bir tempoda. Küçükler bile gülümseyerek ayrılır."
     }
   },
   "team": {

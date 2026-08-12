@@ -31,27 +31,38 @@ export function ServicesPreview() {
           </Reveal>
         </div>
 
-        <Stagger className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((service) => {
             const name = tServices(`${service.id}.name`);
+            const hasSuffix = tServices.has(`${service.id}.nameSuffix`);
             return (
               <StaggerItem
                 key={service.id}
-                className="group relative flex min-h-[280px] flex-col justify-between bg-paper p-7 transition-colors duration-400 hover:bg-soft"
+                className="group relative flex min-h-[240px] flex-col justify-between bg-paper p-7 transition-colors duration-400 hover:bg-soft"
               >
                 <div>
-                  <p className="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-faded">
-                    {service.duration}
-                  </p>
-                  <h3 className="display mt-4 text-3xl md:text-4xl transition-transform duration-500 group-hover:translate-x-1">
-                    <span lang="en">{name}</span>
+                  <h3 className="display text-3xl transition-transform duration-500 group-hover:translate-x-1">
+                    <span lang="en">
+                      {name}
+                      {hasSuffix ? (
+                        <>
+                          {" "}
+                          <span className="text-lg italic normal-case !tracking-normal text-faded">
+                            {tServices(`${service.id}.nameSuffix`)}
+                          </span>
+                        </>
+                      ) : null}
+                    </span>
                   </h3>
                   <p className="mt-4 max-w-sm text-sm leading-relaxed text-faded">
                     {tServices(`${service.id}.description`)}
                   </p>
                 </div>
                 <div className="mt-8 flex items-center justify-between">
-                  <p className="font-mono text-sm tracking-[0.08em]">{service.price}</p>
+                  <p className="font-mono text-sm tracking-[0.08em]">
+                    <span className="text-faded">{t("from")} </span>
+                    <span className="font-semibold">{service.price}</span>
+                  </p>
                   <Link
                     href="#book"
                     className="font-mono text-lg leading-none transition-transform duration-300 group-hover:rotate-45"

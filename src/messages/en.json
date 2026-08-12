@@ -27,19 +27,14 @@
     "heroAlt": "Close-up of a precise haircut with soft shallow depth of field"
   },
   "servicesPreview": {
-    "eyebrow": "Best of the chair",
-    "title": "Signature services",
+    "eyebrow": "Best of Zenizz",
+    "title": "Services",
     "description": "Know what you need?",
     "bookIt": "Book it.",
     "notSure": "Not sure? Explore the menu below.",
     "viewAll": "View all services",
-    "bookAria": "Book {name}"
-  },
-  "serviceCategories": {
-    "cut": "Cuts",
-    "beard": "Beard",
-    "ritual": "Rituals",
-    "combo": "Combos"
+    "bookAria": "Book {name}",
+    "from": "From"
   },
   "aboutPreview": {
     "eyebrow": "Our story",
@@ -167,7 +162,7 @@
     },
     "services": {
       "title": "Services",
-      "metaDescription": "Browse every ZENIZZ service: signature cuts, fades, beard sculpting, hot towel shaves, and complete grooming rituals.",
+      "metaDescription": "Browse ZENIZZ services and pricing: haircuts, beard grooming, cut and beard combos, and kids cuts.",
       "eyebrow": "Services",
       "heroTitle": "Menus built with intention.",
       "heroDescription": "Clear pricing, honest timing, and always room for a personal consult.",
@@ -205,37 +200,22 @@
     }
   },
   "services": {
-    "signature-cut": {
-      "name": "Signature Cut",
-      "description": "A tailored haircut with fade or scissor work, finished with a hot towel and neck shave."
+    "haircut": {
+      "name": "Haircut",
+      "description": "A tailored cut, fully matched to your style."
     },
-    "precision-fade": {
-      "name": "Precision Fade",
-      "description": "Sharp fades with close attention to texture, shape, and balance, from skin fade to soft taper."
-    },
-    "scissor-cut": {
-      "name": "Scissor Cut",
-      "description": "Full scissor work for medium lengths. Soft layers, movement, and a natural flow."
-    },
-    "beard-sculpt": {
-      "name": "Beard Sculpt",
-      "description": "Beard shaping with trimmer and razor, including a hot towel and nourishing aftercare."
-    },
-    "hot-towel-shave": {
-      "name": "Hot Towel Shave",
-      "description": "A classic straight razor shave with warm towels, rich lather, and a cold towel finish."
+    "beard": {
+      "name": "Beard",
+      "description": "Sharp trim and grooming, perfectly in line with your face."
     },
     "cut-beard": {
-      "name": "Cut and Beard",
-      "description": "Our signature haircut paired with beard sculpting: the complete grooming ritual."
+      "name": "Cut & Beard",
+      "description": "The complete treatment. Fresh from head to chin."
     },
-    "zenizz-ritual": {
-      "name": "ZENIZZ Ritual",
-      "description": "Our signature journey: consult, cut, beard or shave, scalp massage, and a styled finish."
-    },
-    "junior-cut": {
-      "name": "Junior Cut",
-      "description": "For boys up to 12. Patient, precise, and at an easy pace."
+    "kids-cut": {
+      "name": "Kids Cut",
+      "nameSuffix": "(up to 10 years)",
+      "description": "Patient and relaxed. Even the little ones leave happy."
     }
   },
   "team": {
