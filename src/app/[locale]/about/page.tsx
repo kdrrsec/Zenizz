@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { BookingWidget } from "@/components/booking/BookingWidget";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -39,7 +38,7 @@ export default async function AboutPage({ params }: PageProps) {
             <Reveal className="lg:col-span-5 space-y-6 text-lg leading-relaxed text-muted">
               <p>{t("paragraph1")}</p>
               <p>{t("paragraph2")}</p>
-              <Button href="#book">{t("bookAppointment")}</Button>
+              <Button href="/book">{t("bookAppointment")}</Button>
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
               <ImageReveal
@@ -58,12 +57,6 @@ export default async function AboutPage({ params }: PageProps) {
               />
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <Container>
-          <BookingWidget title={t("bookingTitle")} description={t("bookingDescription")} />
         </Container>
       </section>
     </>

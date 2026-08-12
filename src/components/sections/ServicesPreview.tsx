@@ -23,7 +23,7 @@ export function ServicesPreview() {
           <Reveal>
             <p className="max-w-md text-faded leading-relaxed">
               {t("description")}{" "}
-              <Link href="#book" className="underline-anim text-ink font-medium">
+              <Link href="/book" className="underline-anim text-ink font-medium">
                 {t("bookIt")}
               </Link>{" "}
               {t("notSure")}
@@ -64,7 +64,7 @@ export function ServicesPreview() {
                     <span className="font-semibold">{service.price}</span>
                   </p>
                   <Link
-                    href="#book"
+                    href="/book"
                     className="font-mono text-lg leading-none transition-transform duration-300 group-hover:rotate-45"
                     aria-label={t("bookAria", { name })}
                   >

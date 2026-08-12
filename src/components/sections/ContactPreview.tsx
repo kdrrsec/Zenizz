@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
-import { BookingWidget } from "@/components/booking/BookingWidget";
 import { Reveal } from "@/components/ui/Reveal";
 
 const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
@@ -59,7 +58,7 @@ export function ContactPreview() {
             </Reveal>
           </div>
 
-          <div className="space-y-8 lg:col-span-7">
+          <div className="lg:col-span-7">
             <Reveal className="relative aspect-[16/10] overflow-hidden bg-line">
               <iframe
                 src={GOOGLE_MAPS_EMBED_SRC}
@@ -70,7 +69,6 @@ export function ContactPreview() {
                 allowFullScreen
               />
             </Reveal>
-            <BookingWidget />
           </div>
         </div>
       </Container>

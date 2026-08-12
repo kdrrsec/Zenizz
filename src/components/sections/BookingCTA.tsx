@@ -31,7 +31,7 @@ export function BookingCTA() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-white/80 leading-relaxed">{t("description")}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button href="#book" variant="inverse">
+            <Button href="/book" variant="inverse">
               {t("bookAppointment")}
             </Button>
             <Button href="/contact" variant="secondary" className="border-white/30 text-paper hover:bg-paper hover:text-ink">

@@ -83,7 +83,7 @@ export function Hero() {
               variants={heroFade}
               className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center"
             >
-              <Button href="#book" variant="primary" className="w-full sm:w-auto" showArrow>
+              <Button href="/book" variant="primary" className="w-full sm:w-auto" showArrow>
                 {t("bookAppointment")}
               </Button>
               <Button

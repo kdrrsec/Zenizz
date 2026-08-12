@@ -142,7 +142,7 @@ export function Navbar() {
 
           <div className="hidden items-center gap-5 sm:flex">
             <LanguageSwitcher />
-            <Button href="#book" variant="soft" size="sm" ariaLabel={t("nav.bookAppointment")}>
+            <Button href="/book" variant="soft" size="sm" ariaLabel={t("nav.bookAppointment")}>
               {t("nav.bookAppointment")}
             </Button>
           </div>
@@ -179,7 +179,7 @@ export function Navbar() {
                 ))}
               </ul>
               <div className="space-y-5 pb-10">
-                <Button href="#book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
+                <Button href="/book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
                   {t("nav.bookAppointment")}
                 </Button>
                 <div className="flex items-center justify-between">

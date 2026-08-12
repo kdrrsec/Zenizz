@@ -170,9 +170,7 @@
       "paragraph2": "İç mekan, ışık, aletler, temposu: her şey o anda bulunma hissini yaratmak için seçildi. ZENIZZ'de sadece işin bitmesini beklemezsin. Görülürsün.",
       "bookAppointment": "Randevu Al",
       "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
-      "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri",
-      "bookingTitle": "ZENIZZ'i deneyimle",
-      "bookingDescription": "Birkaç dokunuşla bir danışma veya imza ritüel için randevu al."
+      "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri"
     },
     "services": {
       "title": "Hizmetler",
@@ -198,6 +196,10 @@
       "eyebrow": "Galeri",
       "heroTitle": "Atölyeden kareler.",
       "heroDescription": "İlham için bir seçki, katalog değil."
+    },
+    "book": {
+      "title": "Randevu Al",
+      "metaDescription": "Beşiktaş, İstanbul'daki ZENIZZ'de randevunu al. Bir hizmet ve saat seç, talebini gönder."
     },
     "contact": {
       "title": "İletişim",

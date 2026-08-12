@@ -4,7 +4,6 @@ import { siteConfig } from "@/data/site";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { BookingWidget } from "@/components/booking/BookingWidget";
 import { Button } from "@/components/ui/Button";
 
 const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
@@ -65,7 +64,7 @@ export default async function ContactPage({ params }: PageProps) {
                   </a>
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Button href="#book">{tNav("bookAppointment")}</Button>
+                  <Button href="/book">{tNav("bookAppointment")}</Button>
                   <Button href={siteConfig.phoneHref} variant="secondary">
                     {t("call")}
                   </Button>
@@ -99,7 +98,6 @@ export default async function ContactPage({ params }: PageProps) {
                   allowFullScreen
                 />
               </Reveal>
-              <BookingWidget />
             </div>
           </div>
         </Container>

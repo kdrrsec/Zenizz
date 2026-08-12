@@ -5,7 +5,6 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Stagger, StaggerItem, Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { BookingWidget } from "@/components/booking/BookingWidget";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { images } from "@/data/site";
 
@@ -81,16 +80,10 @@ export default async function ServicesPage({ params }: PageProps) {
                 })}
               </Stagger>
               <Reveal className="mt-10">
-                <Button href="#book">{t("bookAppointment")}</Button>
+                <Button href="/book">{t("bookAppointment")}</Button>
               </Reveal>
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-line bg-paper-elevated py-20">
-        <Container>
-          <BookingWidget />
         </Container>
       </section>
     </>

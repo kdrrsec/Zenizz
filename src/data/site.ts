@@ -17,12 +17,12 @@ export const siteConfig: SiteConfig = {
     facebook: "https://facebook.com",
   },
   openingHours: [
-    { day: "monday", hours: null },
-    { day: "tuesday", hours: "10:00–19:00" },
-    { day: "wednesday", hours: "10:00–19:00" },
-    { day: "thursday", hours: "10:00–20:00" },
-    { day: "friday", hours: "10:00–20:00" },
-    { day: "saturday", hours: "09:00–17:00" },
+    { day: "monday", hours: "10:00–22:00" },
+    { day: "tuesday", hours: "10:00–22:00" },
+    { day: "wednesday", hours: "10:00–22:00" },
+    { day: "thursday", hours: "10:00–22:00" },
+    { day: "friday", hours: "10:00–22:00" },
+    { day: "saturday", hours: "10:00–22:00" },
     { day: "sunday", hours: null },
   ],
 };

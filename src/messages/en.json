@@ -170,9 +170,7 @@
       "paragraph2": "The interior, the light, the tools, the pace: everything is chosen to create presence. At ZENIZZ, you're not just handled. You're seen.",
       "bookAppointment": "Book Appointment",
       "aboutAlt": "Yusuf at work in the ZENIZZ atelier",
-      "aboutSecondaryAlt": "Yusuf with a happy client",
-      "bookingTitle": "Experience ZENIZZ",
-      "bookingDescription": "Book a consult or a signature ritual in a few taps."
+      "aboutSecondaryAlt": "Yusuf with a happy client"
     },
     "services": {
       "title": "Services",
@@ -198,6 +196,10 @@
       "eyebrow": "Gallery",
       "heroTitle": "Images from the atelier.",
       "heroDescription": "A selection of craft and detail, for inspiration, not a catalog."
+    },
+    "book": {
+      "title": "Book Appointment",
+      "metaDescription": "Book your appointment at ZENIZZ in Beşiktaş, Istanbul. Choose a service, a time, and send your request."
     },
     "contact": {
       "title": "Contact",
