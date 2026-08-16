@@ -30,8 +30,8 @@ type LayoutProps = {
 };
 
 const descriptions = {
-  en: "ZENIZZ is a premium barbershop in Istanbul. Precision cuts, calm rituals, and a chair experience built around craft, not speed.",
-  tr: "ZENIZZ, İstanbul'da premium bir berber. Hassas kesimler, sakin ritüeller ve hız değil ustalık üzerine kurulu bir koltuk deneyimi.",
+  en: "ZENIZZ is a premium barbershop in Beşiktaş, Istanbul, offering precision haircuts, beard grooming, and kids cuts in a calm, detail focused atelier.",
+  tr: "ZENIZZ, Beşiktaş, İstanbul'da hassas saç kesimi, sakal bakımı ve çocuk kesimi sunan, sakin ve detaylara önem veren premium bir berber atölyesi.",
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     metadataBase: new URL(siteConfig.url),
     title: {
-      default: `${siteConfig.name} | ${t("title")}`,
+      default: `${siteConfig.name} — ${t("title")}`,
       template: `%s | ${siteConfig.name}`,
     },
     description,
@@ -67,12 +67,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       locale: locale === "tr" ? "tr_TR" : "en_US",
       url: siteConfig.url,
       siteName: siteConfig.name,
-      title: `${siteConfig.name} | ${t("title")}`,
+      title: `${siteConfig.name} — ${t("title")}`,
       description,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${siteConfig.name} | ${t("title")}`,
+      title: `${siteConfig.name} — ${t("title")}`,
       description,
     },
     robots: {
