@@ -128,44 +128,61 @@ export function Navbar() {
 
       <AnimatePresence>
         {open ? (
-          <motion.div
-            id="mobile-menu"
-            className="fixed inset-0 z-40 bg-paper pt-[var(--nav-height)] lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: easeOutExpo }}
-          >
-            <nav className="container-page flex h-full flex-col justify-between py-10" aria-label={t("nav.mobileNav")}>
-              <ul className="space-y-1">
-                {navigation.map((item, index) => (
-                  <motion.li
-                    key={item.href}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.04 * index, duration: 0.45, ease: easeOutExpo }}
-                  >
-                    <Link
-                      href={item.href}
-                      className="display block py-3 text-4xl"
-                      onClick={() => setOpen(false)}
-                    >
-                      {t(`nav.${item.key}`)}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="space-y-5 pb-10">
-                <Button href="/book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
-                  {t("nav.bookAppointment")}
-                </Button>
-                <div className="flex items-center justify-between">
-                  <p className="eyebrow">{t("marquee.tagline")}</p>
-                  <LanguageSwitcher />
+          <>
+            <motion.div
+              className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-[2px] lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25, ease: easeOutExpo }}
+              onClick={() => setOpen(false)}
+              aria-hidden
+            />
+            <motion.div
+              id="mobile-menu"
+              className="fixed right-3 top-[calc(var(--nav-height)+0.5rem)] z-50 w-[min(80vw,300px)] overflow-hidden rounded-2xl border border-line bg-paper shadow-xl lg:hidden"
+              initial={{ opacity: 0, y: -8, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.97 }}
+              transition={{ duration: 0.25, ease: easeOutExpo }}
+            >
+              <nav className="flex flex-col p-5" aria-label={t("nav.mobileNav")}>
+                <ul className="space-y-1">
+                  {navigation.map((item, index) => {
+                    const active = pathname === item.href;
+                    return (
+                      <motion.li
+                        key={item.href}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.03 * index, duration: 0.3, ease: easeOutExpo }}
+                      >
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "block py-2.5 font-mono text-xs uppercase tracking-[0.1em] text-ink transition-opacity",
+                            active ? "opacity-100 underline underline-offset-4" : "opacity-70 hover:opacity-100",
+                          )}
+                          onClick={() => setOpen(false)}
+                        >
+                          {t(`nav.${item.key}`)}
+                        </Link>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+
+                <div className="mt-4 space-y-4 border-t border-line pt-4">
+                  <Button href="/book" variant="primary" className="w-full" onClick={() => setOpen(false)}>
+                    {t("nav.bookAppointment")}
+                  </Button>
+                  <div className="flex items-center justify-end">
+                    <LanguageSwitcher />
+                  </div>
                 </div>
-              </div>
-            </nav>
-          </motion.div>
+              </nav>
+            </motion.div>
+          </>
         ) : null}
       </AnimatePresence>
     </>

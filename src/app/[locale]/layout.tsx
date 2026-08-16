@@ -16,7 +16,7 @@ import "../globals.css";
 // set to those font-family names here instead of using next/font.
 const fontVariablesStyle = {
   "--font-display": "'Outfit', system-ui, sans-serif",
-  "--font-sans": "'Outfit', system-ui, sans-serif",
+  "--font-sans": "'Inter', system-ui, sans-serif",
   "--font-mono": "'Source Code Pro Variable', ui-monospace, monospace",
 } as React.CSSProperties;
 

@@ -11,9 +11,6 @@
     "mainNav": "Main navigation",
     "mobileNav": "Mobile menu"
   },
-  "marquee": {
-    "tagline": "Istanbul's finest cut"
-  },
   "hero": {
     "headline": "Istanbul's finest cut.",
     "bookAppointment": "Book Appointment",
@@ -184,7 +181,7 @@
       "metaDescription": "Visit ZENIZZ in Beşiktaş, Istanbul or book an appointment. View opening hours and contact details.",
       "eyebrow": "Contact",
       "heroTitle": "Come by. Or plan ahead.",
-      "heroDescription": "We'd love to welcome you to the atelier. For questions or bookings: call, email, or use the booking block below.",
+      "heroDescription": "We'd love to welcome you to the atelier. For questions or bookings: call, email, or book online.",
       "studio": "Studio",
       "studioName": "ZENIZZ Istanbul",
       "contactLabel": "Contact",

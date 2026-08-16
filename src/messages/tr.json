@@ -11,9 +11,6 @@
     "mainNav": "Ana menü",
     "mobileNav": "Mobil menü"
   },
-  "marquee": {
-    "tagline": "İstanbul'un en iyi kesimi"
-  },
   "hero": {
     "headline": "İstanbul'un en iyi kesimi.",
     "bookAppointment": "Randevu Yap",
@@ -184,7 +181,7 @@
       "metaDescription": "İstanbul Beşiktaş'taki ZENIZZ'i ziyaret et veya randevu al. Çalışma saatlerini ve iletişim bilgilerini incele.",
       "eyebrow": "İletişim",
       "heroTitle": "Uğra. Ya da önceden planla.",
-      "heroDescription": "Seni atölyemizde ağırlamayı çok isteriz. Sorular veya randevular için: ara, e-posta gönder veya aşağıdaki randevu alanını kullan.",
+      "heroDescription": "Seni atölyemizde ağırlamayı çok isteriz. Sorular veya randevular için: ara, e-posta gönder veya online randevu al.",
       "studio": "Stüdyo",
       "studioName": "ZENIZZ İstanbul",
       "contactLabel": "İletişim",
