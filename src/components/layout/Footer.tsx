@@ -1,13 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { images, navigation, siteConfig } from "@/data/site";
 import { formatAddress } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
   const t = useTranslations();
+  const pathname = usePathname();
   const year = new Date().getFullYear();
+
+  if (pathname === "/book") return null;
 
   return (
     <footer className="border-t border-line bg-paper text-ink">

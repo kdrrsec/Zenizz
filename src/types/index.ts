@@ -10,6 +10,12 @@ export type OpeningHours = {
   hours: string | null;
 };
 
+export type AddOnEntry = {
+  id: string;
+  price: string;
+  durationMinutes: number;
+};
+
 export type SiteConfig = {
   name: string;
   url: string;

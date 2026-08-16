@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
 
-function LanguageSwitcher({ className }: { className?: string }) {
+export function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -53,6 +53,8 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  if (pathname === "/book") return null;
 
   return (
     <>
