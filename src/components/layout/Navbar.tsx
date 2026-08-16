@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { navigation, siteConfig } from "@/data/site";
+import { images, navigation, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
@@ -65,7 +65,7 @@ export function Navbar() {
           >
             <span className="relative block h-9 w-[150px] shrink-0 lg:ml-5 lg:h-[40.8px] lg:w-[170px] lg:-translate-y-1 lg:translate-x-1">
               <Image
-                src="/zenizz-logo.png"
+                src={images.logo}
                 alt={siteConfig.name}
                 fill
                 priority

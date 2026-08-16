@@ -30,8 +30,8 @@ type LayoutProps = {
 };
 
 const descriptions = {
-  en: "ZENIZZ is a premium barbershop in Beşiktaş, Istanbul, offering precision haircuts, beard grooming, and kids cuts in a calm, detail focused atelier.",
-  tr: "ZENIZZ, Beşiktaş, İstanbul'da hassas saç kesimi, sakal bakımı ve çocuk kesimi sunan, sakin ve detaylara önem veren premium bir berber atölyesi.",
+  en: `${siteConfig.name} is a premium barbershop in Beşiktaş, Istanbul, offering precision haircuts, beard grooming, and kids cuts in a calm, detail focused atelier.`,
+  tr: `${siteConfig.name}, Beşiktaş, İstanbul'da hassas saç kesimi, sakal bakımı ve çocuk kesimi sunan, sakin ve detaylara önem veren premium bir berber atölyesi.`,
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "modern barber",
       "fade",
       "hot towel shave",
-      "ZENIZZ",
+      siteConfig.name,
       "premium barbershop",
     ],
     alternates: {

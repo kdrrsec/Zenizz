@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { reviews } from "@/data/reviews";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { easeOutExpo } from "@/lib/motion";
 
-const GOOGLE_PROFILE_URL = "https://maps.google.com/maps?cid=7479869037686330595";
+const GOOGLE_PROFILE_URL = `https://maps.google.com/maps?cid=${siteConfig.googleMapsCid}`;
 const AUTOPLAY_MS = 6000;
 
 function GoogleLogo({ className }: { className?: string }) {

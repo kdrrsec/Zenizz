@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { navigation, siteConfig } from "@/data/site";
+import { images, navigation, siteConfig } from "@/data/site";
 import { formatAddress } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
@@ -16,7 +16,7 @@ export function Footer() {
           <div className="md:col-span-5">
             <div className="relative h-9 w-[150px]" aria-hidden="true">
               <Image
-                src="/zenizz-logo.png"
+                src={images.logo}
                 alt=""
                 fill
                 sizes="150px"

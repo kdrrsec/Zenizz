@@ -16,6 +16,7 @@ export type SiteConfig = {
   email: string;
   phone: string;
   phoneHref: string;
+  googleMapsCid: string;
   address: {
     street: string;
     city: string;

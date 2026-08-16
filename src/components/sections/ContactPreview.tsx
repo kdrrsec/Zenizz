@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
+const GOOGLE_MAPS_EMBED_SRC = `https://www.google.com/maps?cid=${siteConfig.googleMapsCid}&output=embed`;
 
 export function ContactPreview() {
   const t = useTranslations("contactPreview");

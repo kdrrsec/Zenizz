@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { BOOKING_MOUNT_ID } from "@/lib/booking";
 import { QuickBookingFlow } from "@/components/booking/QuickBookingFlow";
 
 /**
@@ -67,7 +68,7 @@ export function BookingWidget({
           if (cancelled) return;
           window.AxaBook?.init?.({
             widgetId,
-            target: "#zenizz-booking-mount",
+            target: `#${BOOKING_MOUNT_ID}`,
           });
           onReady?.();
         };
@@ -127,7 +128,7 @@ export function BookingWidget({
 
         {showMount ? (
           <div
-            id="zenizz-booking-mount"
+            id={BOOKING_MOUNT_ID}
             ref={mountRef}
             className="mt-8 min-h-[320px] border border-dashed border-line bg-paper p-6"
             data-booking-provider="axabook"

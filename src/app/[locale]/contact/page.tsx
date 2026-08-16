@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 
-const GOOGLE_MAPS_EMBED_SRC = "https://www.google.com/maps?cid=7479869037686330595&output=embed";
+const GOOGLE_MAPS_EMBED_SRC = `https://www.google.com/maps?cid=${siteConfig.googleMapsCid}&output=embed`;
 
 type PageProps = { params: Promise<{ locale: string }> };
 

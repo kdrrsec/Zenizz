@@ -38,6 +38,8 @@ export function getUpcomingOpenDays(count = 6, startFrom = new Date()): DayOptio
 
 export const CHAIR_COUNT = 3;
 
+export const BOOKING_MOUNT_ID = "zenizz-booking-mount";
+
 export function timeToMinutes(value: string): number {
   const [hours, minutes] = value.split(":").map(Number);
   return hours * 60 + minutes;

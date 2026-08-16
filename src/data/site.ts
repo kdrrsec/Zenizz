@@ -6,6 +6,7 @@ export const siteConfig: SiteConfig = {
   email: "hello@zenizz.com",
   phone: "+90 212 123 4567",
   phoneHref: "tel:+902121234567",
+  googleMapsCid: "7479869037686330595",
   address: {
     street: "Nisbetiye, Fecri Ebcioğlu Sk. No:11",
     city: "Beşiktaş/İstanbul",
@@ -36,6 +37,7 @@ export const navigation = [
 ] as const;
 
 export const images = {
+  logo: "/zenizz-logo.png",
   hero: "/Zenizz.png",
   about: "/gallery-yusuf-working.jpg",
   aboutSecondary: "/gallery-yusuf-client.jpg",
