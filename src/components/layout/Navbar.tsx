@@ -105,7 +105,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "font-mono text-[0.7rem] tracking-[0.08em] text-ink uppercase transition-opacity hover:opacity-55",
+                    "corner-trim font-mono text-[0.7rem] tracking-[0.08em] text-ink uppercase transition-opacity hover:opacity-55",
                     active && "opacity-100 underline underline-offset-4",
                   )}
                 >

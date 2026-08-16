@@ -164,6 +164,45 @@
   background-size: 100% 1px;
 }
 
+.corner-trim {
+  position: relative;
+}
+
+.corner-trim::before,
+.corner-trim::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  transition: width 0.3s var(--ease-out-quint), height 0.3s var(--ease-out-quint), border-color 0.3s var(--ease-out-quint);
+  pointer-events: none;
+}
+
+.corner-trim::after {
+  top: -7px;
+  left: -9px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.corner-trim::before {
+  right: -9px;
+  bottom: -7px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+.corner-trim:hover::after,
+.corner-trim:focus-visible::after,
+.corner-trim:hover::before,
+.corner-trim:focus-visible::before {
+  width: 8px;
+  height: 8px;
+  border-color: currentColor;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
