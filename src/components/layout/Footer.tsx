@@ -85,6 +85,17 @@ export function Footer() {
             {formatAddress(siteConfig.address)}
           </p>
         </div>
+
+        <div className="mt-4 border-t border-line pt-4 text-center">
+          <a
+            href="https://axaweb.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-anim font-mono text-[0.65rem] tracking-[0.08em] uppercase text-faded"
+          >
+            Powered by Axaweb.nl
+          </a>
+        </div>
       </Container>
     </footer>
   );
