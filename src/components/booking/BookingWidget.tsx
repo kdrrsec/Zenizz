@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { BOOKING_MOUNT_ID } from "@/lib/booking";
@@ -136,7 +136,11 @@ export function BookingWidget({
           />
         ) : null}
 
-        {provider === "none" ? <QuickBookingFlow /> : null}
+        {provider === "none" ? (
+          <Suspense fallback={null}>
+            <QuickBookingFlow />
+          </Suspense>
+        ) : null}
       </div>
     </section>
   );

@@ -30,7 +30,8 @@
   "teamPreview": {
     "eyebrow": "Ekip",
     "title": "Ustalığın arkasındaki eller",
-    "meetTeam": "Ekiple tanış"
+    "meetTeam": "Ekiple tanış",
+    "book": "Randevu al"
   },
   "gallery": {
     "eyebrow": "Galeri",
@@ -112,6 +113,8 @@
     "defaultTitle": "Randevu Yap",
     "defaultDescription": "Bir hizmet ve sana uygun bir saat seç. Telefon ya da e-postayla onaylıyoruz.",
     "subject": "Randevu talebi",
+    "professionalStepTitle": "Bir uzman seç",
+    "anyProfessional": "Herhangi bir uzman",
     "step1Title": "Bir hizmet seç",
     "step2Title": "Gün ve saat seç",
     "step3Title": "Bilgilerin",

@@ -30,7 +30,8 @@
   "teamPreview": {
     "eyebrow": "Team",
     "title": "The hands behind the craft",
-    "meetTeam": "Meet the team"
+    "meetTeam": "Meet the team",
+    "book": "Book"
   },
   "gallery": {
     "eyebrow": "Lookbook",
@@ -112,6 +113,8 @@
     "defaultTitle": "Book Appointment",
     "defaultDescription": "Pick a service and a time that works. We confirm by phone or email.",
     "subject": "Appointment request",
+    "professionalStepTitle": "Choose a professional",
+    "anyProfessional": "Any professional",
     "step1Title": "Choose a service",
     "step2Title": "Pick a day and time",
     "step3Title": "Your details",

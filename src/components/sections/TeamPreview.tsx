@@ -8,6 +8,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 export function TeamPreview() {
   const t = useTranslations("teamPreview");
   const tTeam = useTranslations("team");
+  const showBookPerMember = team.length > 1;
 
   return (
     <section className="bg-paper py-20 md:py-28" aria-labelledby="team-preview-title">
@@ -43,6 +44,16 @@ export function TeamPreview() {
                 <p className="mt-1 font-mono text-[0.65rem] tracking-[0.1em] uppercase text-faded">
                   {tTeam(`${member.id}.role`)}
                 </p>
+                {showBookPerMember ? (
+                  <Button
+                    href={`/book?barber=${member.id}`}
+                    variant="soft"
+                    size="sm"
+                    className="mt-3"
+                  >
+                    {t("book")}
+                  </Button>
+                ) : null}
               </div>
             </StaggerItem>
           ))}

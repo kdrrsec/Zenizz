@@ -1,10 +1,13 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site";
+import { team } from "@/data/team";
 import { getUpcomingOpenDays, getTimeSlots } from "@/lib/booking";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -13,6 +16,8 @@ const fadeStep = {
   hidden: { opacity: 0, y: 12 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const } },
 };
+
+const ANY_PROFESSIONAL_ID = "any";
 
 function toIso(date: Date) {
   return date.toISOString().slice(0, 10);
@@ -25,8 +30,18 @@ function isToday(date: Date) {
 export function QuickBookingFlow() {
   const t = useTranslations("booking");
   const tServices = useTranslations("services");
+  const tTeam = useTranslations("team");
   const locale = useLocale();
+  const searchParams = useSearchParams();
 
+  const hasProfessionals = team.length > 1;
+  const requestedBarber = searchParams.get("barber");
+  const initialProfessionalId =
+    hasProfessionals && requestedBarber && team.some((member) => member.id === requestedBarber)
+      ? requestedBarber
+      : null;
+
+  const [professionalId, setProfessionalId] = useState<string | null>(initialProfessionalId);
   const [serviceId, setServiceId] = useState<string | null>(null);
   const [dateIso, setDateIso] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
@@ -36,6 +51,7 @@ export function QuickBookingFlow() {
   const [submitted, setSubmitted] = useState(false);
 
   const days = useMemo(() => getUpcomingOpenDays(6), []);
+  const selectedProfessional = team.find((member) => member.id === professionalId) ?? null;
   const selectedService = services.find((service) => service.id === serviceId) ?? null;
   const selectedDay = days.find((day) => toIso(day.date) === dateIso) ?? null;
   const slots =
@@ -44,8 +60,12 @@ export function QuickBookingFlow() {
   const weekdayFmt = useMemo(() => new Intl.DateTimeFormat(locale, { weekday: "short" }), [locale]);
   const dateFmt = useMemo(() => new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" }), [locale]);
 
+  const professionalChosen = !hasProfessionals || Boolean(professionalId);
+  const professionalLabel = selectedProfessional ? selectedProfessional.name : t("anyProfessional");
+
   function resetAll() {
     setSubmitted(false);
+    setProfessionalId(null);
     setServiceId(null);
     setDateIso(null);
     setTime(null);
@@ -61,6 +81,7 @@ export function QuickBookingFlow() {
     const serviceName = tServices(`${selectedService.id}.name`);
     const dateLabel = `${weekdayFmt.format(selectedDay.date)} ${dateFmt.format(selectedDay.date)}`;
     const bodyLines = [
+      hasProfessionals ? `${t("professionalStepTitle")}: ${professionalLabel}` : null,
       `${serviceName} (${selectedService.price})`,
       `${dateLabel}, ${time}`,
       "",
@@ -95,46 +116,97 @@ export function QuickBookingFlow() {
 
   return (
     <div className="mt-10 space-y-8">
-      <div>
-        {selectedService ? (
-          <button
-            type="button"
-            onClick={() => setServiceId(null)}
-            className="flex w-full items-center justify-between border border-line bg-paper px-5 py-4 text-left transition-colors hover:border-ink"
-          >
-            <span className="font-mono text-sm">
-              <span className="font-semibold">{tServices(`${selectedService.id}.name`)}</span>
-              <span className="ml-2 text-faded">
-                {selectedService.price} · {t("minutesShort", { minutes: selectedService.durationMinutes })}
-              </span>
-            </span>
-            <span className="font-mono text-xs uppercase tracking-[0.1em] text-stone">{t("change")}</span>
-          </button>
-        ) : (
-          <>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-stone">{t("step1Title")}</p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {services.map((service) => (
+      {hasProfessionals ? (
+        <div>
+          {professionalId ? (
+            <button
+              type="button"
+              onClick={() => setProfessionalId(null)}
+              className="flex w-full items-center justify-between border border-line bg-paper px-5 py-4 text-left transition-colors hover:border-ink"
+            >
+              <span className="font-mono text-sm font-semibold">{professionalLabel}</span>
+              <span className="font-mono text-xs uppercase tracking-[0.1em] text-stone">{t("change")}</span>
+            </button>
+          ) : (
+            <>
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-stone">
+                {t("professionalStepTitle")}
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
                 <button
-                  key={service.id}
                   type="button"
-                  onClick={() => setServiceId(service.id)}
-                  className="border border-line bg-paper p-5 text-left transition-colors hover:border-ink"
+                  onClick={() => setProfessionalId(ANY_PROFESSIONAL_ID)}
+                  className="flex items-center gap-3 border border-line bg-paper p-4 text-left transition-colors hover:border-ink"
                 >
-                  <span className="block font-mono text-sm font-semibold">
-                    {tServices(`${service.id}.name`)}
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-line bg-soft font-mono text-xs uppercase text-faded">
+                    {t("anyProfessional").slice(0, 2)}
                   </span>
-                  <span className="mt-1 block font-mono text-xs text-faded">
-                    {service.price} · {t("minutesShort", { minutes: service.durationMinutes })}
-                  </span>
+                  <span className="font-mono text-sm font-semibold">{t("anyProfessional")}</span>
                 </button>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+                {team.map((member) => (
+                  <button
+                    key={member.id}
+                    type="button"
+                    onClick={() => setProfessionalId(member.id)}
+                    className="flex items-center gap-3 border border-line bg-paper p-4 text-left transition-colors hover:border-ink"
+                  >
+                    <span className="relative h-12 w-12 shrink-0 overflow-hidden border border-line bg-soft">
+                      <Image src={member.image} alt="" fill sizes="48px" className="object-cover" />
+                    </span>
+                    <span>
+                      <span className="block font-mono text-sm font-semibold">{member.name}</span>
+                      <span className="block font-mono text-xs text-faded">{tTeam(`${member.id}.role`)}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      ) : null}
 
-      {selectedService ? (
+      {professionalChosen ? (
+        <div>
+          {selectedService ? (
+            <button
+              type="button"
+              onClick={() => setServiceId(null)}
+              className="flex w-full items-center justify-between border border-line bg-paper px-5 py-4 text-left transition-colors hover:border-ink"
+            >
+              <span className="font-mono text-sm">
+                <span className="font-semibold">{tServices(`${selectedService.id}.name`)}</span>
+                <span className="ml-2 text-faded">
+                  {selectedService.price} · {t("minutesShort", { minutes: selectedService.durationMinutes })}
+                </span>
+              </span>
+              <span className="font-mono text-xs uppercase tracking-[0.1em] text-stone">{t("change")}</span>
+            </button>
+          ) : (
+            <>
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.14em] text-stone">{t("step1Title")}</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {services.map((service) => (
+                  <button
+                    key={service.id}
+                    type="button"
+                    onClick={() => setServiceId(service.id)}
+                    className="border border-line bg-paper p-5 text-left transition-colors hover:border-ink"
+                  >
+                    <span className="block font-mono text-sm font-semibold">
+                      {tServices(`${service.id}.name`)}
+                    </span>
+                    <span className="mt-1 block font-mono text-xs text-faded">
+                      {service.price} · {t("minutesShort", { minutes: service.durationMinutes })}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      ) : null}
+
+      {professionalChosen && selectedService ? (
         <motion.div initial="hidden" animate="visible" variants={fadeStep}>
           {dateIso && time ? (
             <button
@@ -211,7 +283,7 @@ export function QuickBookingFlow() {
         </motion.div>
       ) : null}
 
-      {selectedService && dateIso && time ? (
+      {professionalChosen && selectedService && dateIso && time ? (
         <motion.form
           initial="hidden"
           animate="visible"
