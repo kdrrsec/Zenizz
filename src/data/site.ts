@@ -40,5 +40,5 @@ export const images = {
   about: "/gallery-yusuf-working.jpg",
   aboutSecondary: "/gallery-yusuf-client.jpg",
   services: "/gallery-window-cut.jpg",
-  cta: "/gallery-mirrors-fade.jpg",
+  cta: "/gallery-tools-flatlay.jpg",
 } as const;
