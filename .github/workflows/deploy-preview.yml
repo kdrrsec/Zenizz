@@ -1,0 +1,86 @@
+# Deploys Zenizz to a PREVIEW environment on every push to develop.
+# Production (zenizzbarbershop.com, the main branch) is untouched by
+# this file on purpose — see docs/WORKFLOW.md in the AxaWeb-Deploy repo
+# for the full explanation of this pattern.
+#
+# Zenizz is a full Next.js app (uses next-intl, a Postgres database via
+# @neondatabase/serverless), so it's hosted as a Node.js app via
+# DirectAdmin's Node.js Selector (Passenger), not a static export.
+# Requires next.config.ts to set output: "standalone" (already added).
+#
+# Setup needed in DirectAdmin before this can run (same steps as done
+# for Vyzr):
+#   1. Advanced Features > Setup Node.js App > Create Application
+#      - Application URL: the chosen preview subdomain (e.g.
+#        zenizz.preview.axaweb.nl)
+#      - Application startup file: server.js
+#      - Node.js version: 20.x
+#   2. FTP Management > Create FTP Account, scope "Custom", directory =
+#      the exact "Application root" path DirectAdmin shows for that app
+#   3. Add FTP_HOST, FTP_USERNAME, FTP_PASSWORD (and FTP_PORT if not 21)
+#      as secrets on this repository (Settings > Secrets and variables >
+#      Actions) — not shared with any other customer's secrets
+#
+# This workflow will fail until that setup exists — that's expected
+# until it's done.
+
+name: Deploy Preview
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm install
+
+      - run: npm run build
+
+      - name: Verify standalone build output exists
+        run: |
+          if [ ! -f ".next/standalone/server.js" ]; then
+            echo "::error::.next/standalone/server.js was not found. Check next.config.ts has output: 'standalone'."
+            exit 1
+          fi
+
+      - name: Assemble deployable bundle
+        run: |
+          mkdir -p .next/standalone/.next/static
+          cp -r .next/static/. .next/standalone/.next/static/
+          if [ -d public ]; then
+            mkdir -p .next/standalone/public
+            cp -r public/. .next/standalone/public/
+          fi
+          mkdir -p .next/standalone/tmp
+          echo "Deployed ${{ github.sha }} at $(date -u +%Y-%m-%dT%H:%M:%SZ)" > .next/standalone/tmp/restart.txt
+
+      - name: Sync build to hosting over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          protocol: ftps
+          local-dir: ./.next/standalone/
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/.cache/**
+
+      - name: Deployment summary
+        run: |
+          echo "### Deployed to Preview" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Restart: triggered via tmp/restart.txt (Passenger)" >> "$GITHUB_STEP_SUMMARY"
