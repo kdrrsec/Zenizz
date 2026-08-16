@@ -56,7 +56,6 @@
   --accent: #000000;
   --overlay: rgba(0, 0, 0, 0.35);
   --nav-height: 4rem;
-  --announce-height: 2.25rem;
   --background: var(--paper);
   --foreground: var(--ink);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
@@ -165,31 +164,7 @@
   background-size: 100% 1px;
 }
 
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.marquee-track {
-  display: inline-flex;
-  gap: 3rem;
-  animation: marquee 28s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-
   *,
   *::before,
   *::after {

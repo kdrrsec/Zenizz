@@ -38,7 +38,8 @@ export function QuickBookingFlow() {
   const days = useMemo(() => getUpcomingOpenDays(6), []);
   const selectedService = services.find((service) => service.id === serviceId) ?? null;
   const selectedDay = days.find((day) => toIso(day.date) === dateIso) ?? null;
-  const slots = selectedDay ? getTimeSlots(selectedDay.hours) : [];
+  const slots =
+    selectedDay && selectedService ? getTimeSlots(selectedDay.hours, selectedService.durationMinutes) : [];
 
   const weekdayFmt = useMemo(() => new Intl.DateTimeFormat(locale, { weekday: "short" }), [locale]);
   const dateFmt = useMemo(() => new Intl.DateTimeFormat(locale, { day: "numeric", month: "short" }), [locale]);

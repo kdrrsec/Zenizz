@@ -12,12 +12,7 @@
     "mobileNav": "Mobile menu"
   },
   "marquee": {
-    "name": "Zenizz Barbershop",
-    "tagline": "Istanbul's finest cut",
-    "since": "Est. 2026",
-    "bookChair": "Book your chair",
-    "premium": "Premium barber experience",
-    "fades": "Skin fades"
+    "tagline": "Istanbul's finest cut"
   },
   "hero": {
     "headline": "Istanbul's finest cut.",

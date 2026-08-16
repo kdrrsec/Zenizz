@@ -64,7 +64,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       </motion.div>
 
-      <div className="relative z-10 w-full px-0 pt-[calc(var(--announce-height)+var(--nav-height)+2.5rem)] pb-16 sm:pb-20 md:pb-24">
+      <div className="relative z-10 w-full px-0 pt-[calc(var(--nav-height)+2.5rem)] pb-16 sm:pb-20 md:pb-24">
         <div className="container-wide">
           <motion.div
             variants={heroContainer}

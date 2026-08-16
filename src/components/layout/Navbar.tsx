@@ -56,30 +56,7 @@ export function Navbar() {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-[60] border-b border-black/5 bg-paper text-ink">
-        <div className="marquee py-2">
-          <div className="marquee-track eyebrow !text-ink/70">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <span key={i} className="inline-flex items-center gap-8 px-4">
-                <span>{t("marquee.name")}</span>
-                <span aria-hidden>·</span>
-                <span>{t("marquee.tagline")}</span>
-                <span aria-hidden>·</span>
-                <span>{t("marquee.since")}</span>
-                <span aria-hidden>·</span>
-                <span>{t("marquee.bookChair")}</span>
-                <span aria-hidden>·</span>
-                <span>{t("marquee.premium")}</span>
-                <span aria-hidden>·</span>
-                <span>{t("marquee.fades")}</span>
-                <span aria-hidden>·</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <header className="fixed inset-x-0 top-[var(--announce-height)] z-50 border-b border-line bg-paper/95 text-ink backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/95 text-ink backdrop-blur-md">
         <div className="container-wide flex h-[var(--nav-height)] items-center justify-between gap-4">
           <Link
             href="/"
@@ -151,7 +128,7 @@ export function Navbar() {
         {open ? (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-40 bg-paper pt-[calc(var(--announce-height)+var(--nav-height))] lg:hidden"
+            className="fixed inset-0 z-40 bg-paper pt-[var(--nav-height)] lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

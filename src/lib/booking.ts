@@ -36,19 +36,23 @@ export function getUpcomingOpenDays(count = 6, startFrom = new Date()): DayOptio
   return result;
 }
 
-function toMinutes(value: string): number {
+export const CHAIR_COUNT = 3;
+
+export function timeToMinutes(value: string): number {
   const [hours, minutes] = value.split(":").map(Number);
   return hours * 60 + minutes;
 }
 
-export function getTimeSlots(hours: string, stepMinutes = 60): string[] {
+const toMinutes = timeToMinutes;
+
+export function getTimeSlots(hours: string, durationMinutes: number): string[] {
   const [startStr, endStr] = hours.split("–").map((part) => part.trim());
   const start = toMinutes(startStr);
   const end = toMinutes(endStr);
-  const lastSlot = end - 60;
+  const lastSlot = end - durationMinutes;
 
   const slots: string[] = [];
-  for (let minutes = start; minutes <= lastSlot; minutes += stepMinutes) {
+  for (let minutes = start; minutes <= lastSlot; minutes += durationMinutes) {
     const h = Math.floor(minutes / 60);
     const m = minutes % 60;
     slots.push(`${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`);

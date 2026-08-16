@@ -24,7 +24,7 @@ export default async function BookPage({ params }: PageProps) {
   setRequestLocale(locale);
 
   return (
-    <section className="border-b border-line bg-paper pt-[calc(var(--announce-height)+var(--nav-height)+4rem)] pb-16 md:pb-24">
+    <section className="border-b border-line bg-paper pt-[calc(var(--nav-height)+4rem)] pb-16 md:pb-24">
       <Container wide>
         <BookingWidget />
       </Container>

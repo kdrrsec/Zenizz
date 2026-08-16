@@ -13,7 +13,7 @@ export function PageHero({ eyebrow, title, description, className }: PageHeroPro
   return (
     <header
       className={cn(
-        "border-b border-line bg-paper pt-[calc(var(--announce-height)+var(--nav-height)+4rem)] pb-14 md:pb-20",
+        "border-b border-line bg-paper pt-[calc(var(--nav-height)+4rem)] pb-14 md:pb-20",
         className,
       )}
     >
