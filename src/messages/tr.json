@@ -30,19 +30,6 @@
     "bookAria": "{name} için randevu al",
     "from": "Başlangıç"
   },
-  "aboutPreview": {
-    "eyebrow": "Hikayemiz",
-    "quote": "Önce görünüşün konuşsun.",
-    "description": "Her koltuğun ardında yılların ustalığı var, sakin ve keskin bir berber deneyimine dönüştü.",
-    "pillars": [
-      "Profesyonel berberler tarafından yapılır",
-      "Hız değil, o an odaklı bir deneyim",
-      "Kısa ve orta uzunluklar için hassas kesimler"
-    ],
-    "readStory": "Hikayemizi oku",
-    "aboutAlt": "Yusuf, ZENIZZ atölyesinde çalışırken",
-    "aboutSecondaryAlt": "Yusuf ve memnun bir müşteri"
-  },
   "teamPreview": {
     "eyebrow": "Ekip",
     "title": "Ustalığın arkasındaki eller",

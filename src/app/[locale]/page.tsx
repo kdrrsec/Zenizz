@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
-import { AboutPreview } from "@/components/sections/AboutPreview";
 import { TeamPreview } from "@/components/sections/TeamPreview";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
 import { Reviews } from "@/components/sections/Reviews";
@@ -24,7 +23,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <Hero />
       <ServicesPreview />
-      <AboutPreview />
       <TeamPreview />
       <GalleryPreview />
       <Reviews />

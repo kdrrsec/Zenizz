@@ -30,19 +30,6 @@
     "bookAria": "Book {name}",
     "from": "From"
   },
-  "aboutPreview": {
-    "eyebrow": "Our story",
-    "quote": "Let the cut speak first.",
-    "description": "Years of craft behind every chair, refined into a quieter, sharper barbershop experience.",
-    "pillars": [
-      "Created by professional barbers",
-      "Built around presence, not speed",
-      "Precision cuts for short and medium lengths"
-    ],
-    "readStory": "Read our story",
-    "aboutAlt": "Yusuf at work in the ZENIZZ atelier",
-    "aboutSecondaryAlt": "Yusuf with a happy client"
-  },
   "teamPreview": {
     "eyebrow": "Team",
     "title": "The hands behind the craft",

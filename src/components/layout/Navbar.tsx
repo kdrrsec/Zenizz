@@ -63,14 +63,16 @@ export function Navbar() {
             className="relative z-50 ml-3 flex h-9 w-[150px] items-center transition-opacity hover:opacity-70 sm:ml-6"
             aria-label={`${siteConfig.name} home`}
           >
-            <Image
-              src="/zenizz-logo.png"
-              alt={siteConfig.name}
-              fill
-              priority
-              sizes="150px"
-              className="object-contain object-left"
-            />
+            <span className="relative block h-9 w-[150px] shrink-0 lg:ml-5 lg:h-[40.8px] lg:w-[170px]">
+              <Image
+                src="/zenizz-logo.png"
+                alt={siteConfig.name}
+                fill
+                priority
+                sizes="170px"
+                className="object-contain object-left"
+              />
+            </span>
           </Link>
 
           <button
